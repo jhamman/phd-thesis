@@ -1,34 +1,34 @@
-\chapter {Conclusions}
+\chapter{Conclusions and Recommendations}
 \label{chap:conclusions}
 
-Overarching ideas motivating my research
-  - major changes in the global and arctic climate systems
-  - need for better models for prediction
-  - need for better models for process understanding
+The primary goal of this dissertation was to develop and apply the Regional Arctic System Model (RASM) in order to better understand key hydroclimatological processes in the Arctic.
+This work was motivated by four main research gaps in the Arctic: 1) the need to better understand specific land surface process behavior, 2) the need to better understand the coupled interactions between the land and the other core physical climate components, 3) the need to better understand how changes in the global climate system will manifest, and 4) the need to improve model capacity for process representation and prediction.
 
 Rational for using coupled RCMs to approach my research questions
   - RCMs off a coupled framework with fewer degrees of freedom
   - computationally less expensive
   - test bed for high-res coupled model development
 
-Advanced understanding from chapter 2
-  - introduced a novel coupling of the VIC model within RASM
-  - evaluated VIC compared to observations and other models (reanalyses)
-  - identified areas where VIC was performing better than other coupled models
-  - identified areas where VIC and RASM could be improved
+In chapter \ref{chap:land_surface}, we introduced a novel coupling of the Variable Infiltration Capacity (VIC) model within RASM.
+We evaluated VIC compared to observations and other models (reanalyses).
+We also identified areas where VIC was performing better than other coupled models.
+Finally, we identified areas where VIC and RASM could be improved, motivating ongoing development on the land, atmosphere, and streamflow routing model components.
 
-Advanced understanding from chapter 3
-  - introduced a new routing model for coupled climate models
-  - evaluated the model against in-situ observations
-  - identified the sources of biases in the RASM streamflow flux
-  - illustrated the impact streamflow has on the coupled ice/ocean system
-  - presented a new coastal streamflow dataset for ocean modeling applications
+In chapter \ref{chap:streamflow}, we introduced a new river routing scheme for coupled climate models.
+In this chapter, we extensively evaluated the model against in-situ observations and other model based datasets, characterizing the sources of biases in the RASM streamflow flux.
+We illustrated the impact streamflow has on the coupled ice/ocean system using two coupled RASM simulations, one with the streamflow flux delivered to the ocean, the other without.
+Associated with this chapter is a new coastal streamflow dataset for ocean modeling applications.
+As we showed in this chapter, this dataset is of higher spatial and temporal resolution than existing datasets used by the ocean modeling community, and provides substantial improvement in the representation of coastal streamflow in unguaged areas.
 
+% TODO
 Advanced understanding from chapter 4
 
-Chapters 2 and 3 were model development chapters
-  - this dissertation included the development and application of the VIC and RVIC models
-  - evaluation of these models required the development of unique methods for comparing datasets derived from observations and models with the goal of understanding and improving the model.
+Chapters \ref{chap:land_surface} and \ref{chap:streamflow} were model development chapters.
+While working on this dissertation, I developed the RVIC streamflow routing model \citep{Hamman_2015,Hamman_2016b} and participated as a core development member of the VIC model \citep{Hamman_2016c,Hamman_2016d}.
+While both of my work on these models was largely are merely extensions of previous models, my contribution has focused on extensibility and reproducibility.
+I have
+
+  -evaluation of these models required the development of unique methods for comparing datasets derived from observations and models with the goal of understanding and improving the model.
   - while the majority of the ideas that made up the models in chapter 2 and 3 were not new, their application in RASM required extensive effort, both in terms of software infrastructure and model tuning.
 
 Chapter 4 was an application of the model developed in 2/3

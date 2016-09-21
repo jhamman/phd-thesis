@@ -5,15 +5,14 @@
 This chapter has been published in its current form in the \textit{Journal of Climate}.
 \textcopyright American Meteorological Society.
 Used with permission.
-\begin{itemize}
-    \item \bibentry{Hamman_2016a}.
-\end{itemize}
-
 The supplemental material for this chapter is provided in appendix \ref{chap:land_surface_sup}.
 
-{\bf Abstract}
+\hangbibentry{Hamman_2016a}
+
+\section*{Abstract}
+
 The Regional Arctic System Model (RASM) is a fully coupled, regional Earth system model applied over the pan-Arctic domain.
-This paper discusses the implementation of the Variable Infiltration Capacity land surface model (VIC) in RASM and evaluates the ability of RASM, version 1.0, to capture key features of the land surface climate and hydrologic cycle for the period 1979–2014 in comparison with uncoupled VIC simulations, reanalysis datasets, satellite measurements, and in situ observations.
+This paper discusses the implementation of the Variable Infiltration Capacity land surface model (VIC) in RASM and evaluates the ability of RASM, version 1.0, to capture key features of the land surface climate and hydrologic cycle for the period 1979-2014 in comparison with uncoupled VIC simulations, reanalysis datasets, satellite measurements, and in situ observations.
 RASM reproduces the dominant features of the land surface climatology in the Arctic, such as the amount and regional distribution of precipitation, the partitioning of precipitation between runoff and evapotranspiration, the effects of snow on the water and energy balance, and the differences in turbulent fluxes between the tundra and taiga biomes.
 Surface air temperature biases in RASM, compared to reanalysis datasets ERA-Interim and MERRA, are generally less than 2$^{\circ}$C; however, in the cold seasons there are local biases that exceed 6$^{\circ}$C.
 Compared to satellite observations, RASM captures the annual cycle of snow-covered area well, although melt progresses about two weeks faster than observations in the late spring at high latitudes.
@@ -39,7 +38,7 @@ In RASM, the land surface scheme is the Variable Infiltration Capacity model \ci
   \label{fig:domain}
 \end{figure}
 
-We assess the RASM-simulated land surface climate and land–atmosphere coupling in terms of a range of hydrometeorological variables.
+We assess the RASM-simulated land surface climate and land-atmosphere coupling in terms of a range of hydrometeorological variables.
 We compare fully coupled simulations using RASM version 1.0 to reanalysis, remote sensing, and observation-based datasets.
 Our goal in this paper is to establish a baseline for future model development and applications, and to understand the processes that are and are not well represented.
 
@@ -56,10 +55,10 @@ They cited intermodel differences of up to 30\% in the partitioning of precipita
 They also noted that most models struggled to capture the winter baseflow behavior, deficiencies that were partially corrected, in some of the models, by adjusting the soil parameterizations.
 \citet{Adam_2007} and \citet{Tan_2011} used uncoupled implementations of VIC to investigate twentieth-century changes in annual and seasonal hydrologic fluxes in the Arctic.
 Frequently, uncoupled simulations are used to develop new model physics and to improve land surface process representations \citep{Bonan_2011,Bowling_2004,Bowling_2010,Cherkauer_2003,Swenson_2012}.
-These studies have been useful in evaluating the model representations of hydrologic processes such as streamflow or evapotranspiration, but have not accounted for coupled land–atmosphere feedbacks.
+These studies have been useful in evaluating the model representations of hydrologic processes such as streamflow or evapotranspiration, but have not accounted for coupled land-atmosphere feedbacks.
 
-The development of coupled land–atmosphere and Earth system models has been an important advance in our understanding of hydrometeorology.
-Regional and global coupled land–atmosphere models offer a tool to understand how feedbacks between model components propagate changes in individual elements.
+The development of coupled land-atmosphere and Earth system models has been an important advance in our understanding of hydrometeorology.
+Regional and global coupled land-atmosphere models offer a tool to understand how feedbacks between model components propagate changes in individual elements.
 Notable examples of this can be found in numerous studies at high and middle latitudes that have shown the importance of antecedent soil moisture and surface albedo in seasonal climate forecasts \citep{Beljaars_1996,Betts_2004,Dominguez_2006,Koster_2004}.
 Studies such as these highlight the importance of developing and evaluating land surface processes within a coupled model framework.
 
@@ -80,7 +79,7 @@ RASM is a high-resolution, regional, coupled Earth system model that has been de
 RASM version 1.0 uses the Community Earth System Model (CESM) coupling infrastructure \citep[CPL7; ][]{Craig_2012,Roberts_2015a} and is composed of five component models:
 
 \begin{enumerate}
-  \item The Weather Research and Forecasting (WRF) Model \citep{Skamarock_2008} is an atmospheric mesoscale meteorological model. \citet{DuVivier_2016} and \citet{Cassano_2016} provide a detailed description of the WRF model, version 3.2, as it is applied in RASM. Temperature and winds in the top 20 levels of WRF are spectrally nudged to scales larger than approximately 3400 km with nudging linearly ramped from no nudging at level 20 to a nudging strength of 0.0003 s−1 (nudged toward boundary conditions every 55 min) at level 40 \citep{Glisan_2013,Skamarock_2008}.
+  \item The Weather Research and Forecasting (WRF) Model \citep{Skamarock_2008} is an atmospheric mesoscale meteorological model. \citet{DuVivier_2016} and \citet{Cassano_2016} provide a detailed description of the WRF model, version 3.2, as it is applied in RASM. Temperature and winds in the top 20 levels of WRF are spectrally nudged to scales larger than approximately 3400 km with nudging linearly ramped from no nudging at level 20 to a nudging strength of 0.0003 s-1 (nudged toward boundary conditions every 55 min) at level 40 \citep{Glisan_2013,Skamarock_2008}.
   \item The Parallel Ocean Program model \citep[POP; ][]{Smith_2010} is a general circulation ocean model. \citet{Roberts_2015a} provide a description of the application of POP, version 2, within RASM.
   \item The Los Alamos Sea Ice model \citep[CICE; ]{Hunke2015} is widely used in regional and global climate simulations. \citet{Roberts_2015a} provide a description of the application of CICE, version 5, within RASM.
   \item The streamflow routing model used is an adapted version of a linear routing model frequently used to route streamflows from VIC output \citep[RVIC; ][]{Lohmann_1996,Lohmann_1998b}. \citet{Hamman_2016b} provide a description of RVIC, version 1.0, as it is applied in RASM.
@@ -131,7 +130,7 @@ Table S1 in the supplemental material provides additional details on the land su
 
 In the RASM infrastructure, model components are coupled through the flux coupler CPL7 \citep{Craig_2012}.
 Each model component passes all relevant fluxes and states to CPL7, which then aggregates, regrids, and conservatively distributes fluxes to individual model components.
-The land–atmosphere coupling is performed at a 20-min time step.
+The land-atmosphere coupling is performed at a 20-min time step.
 At each coupling time step, the land surface model (VIC) exchanges states and fluxes as detailed in Table S2 of the supplemental material.
 RASM includes one-way coupling between the land and ocean components through the freshwater flux.
 Runoff and baseflow from VIC are passed via the coupler to the streamflow routing model RVIC, which routes the freshwater flux to coastal ocean grid cells.
@@ -161,7 +160,7 @@ These simulations will be referred to hereafter as $RASM_{ERA}$ and $RASM_{CFSR}
 Much of the Arctic region is sparsely populated and has few in situ monitoring stations compared to lower latitudes.
 The choice of comparison data products used in this paper reflects the need to combine model-simulated reanalysis products with remote sensing and in situ observations to assess the land surface climate of the region.
 Table S3 in the supplemental material outlines each of these datasets along with their spatiotemporal characteristics.
-All gridded datasets were regridded to the RASM land–atmosphere 50-km near-equal-area grid.
+All gridded datasets were regridded to the RASM land-atmosphere 50-km near-equal-area grid.
 
 Reanalysis products offer model-simulated estimates of land and atmosphere states and fluxes constrained by observations.
 In areas where assimilated observations are sparsely distributed, reanalysis results are more dependent on the reanalysis model than on the assimilated observations.
@@ -187,7 +186,7 @@ We use the National Snow and Ice Data Center (NSIDC) Northern Hemisphere Equal-A
 
 \subsubsection{Approach to model comparison and validation}
 
-Coupled land–atmosphere models, like RASM or reanalyses, are merely ``virtual realities'' and are useful as far as they allow us to explore the coupled processes in the physical climate system \citep{Betts_2004}.
+Coupled land-atmosphere models, like RASM or reanalyses, are merely ``virtual realities'' and are useful as far as they allow us to explore the coupled processes in the physical climate system \citep{Betts_2004}.
 Our approach to assessing the performance of RASM in simulating high-latitude land surface climate has been to select a wide range of comparison datasets (see section \ref{sec:datasets} and Table S3) that provide insight into the underlying processes and behavior of the climate system.
 Ultimately, we are interested in the processes that the model simulates and not the exact replication of the climate in any of the chosen comparison datasets.
 After all, the uncertainty in spatially distributed observed climatological variables, such as precipitation, is poorly quantified and the spread among individual datasets can be large.
@@ -198,10 +197,10 @@ Lacking quantifiable measurement error and uncertainty statistics, we have cited
 
 We provide summarized analysis of the annual cycle using two sets of spatial masks.
 First, we summarize variables related to the surface energy budget in RASM (see Fig. \ref{fig:energy_cycle}), distinguishing between the tundra and taiga biomes \citep{Olson_2001} (Fig. \ref{fig:domain}b).
-Observation-based studies have identified the important and marked differences in land–atmosphere interactions between these biomes \citep{Beringer_2005,Chapin_2000a,Chapin_2000b} and we have therefore used these masks to highlight RASM’s performance across different surface types.
+Observation-based studies have identified the important and marked differences in land-atmosphere interactions between these biomes \citep{Beringer_2005,Chapin_2000a,Chapin_2000b} and we have therefore used these masks to highlight RASM’s performance across different surface types.
 Second, we summarize variables related to the hydrologic cycle using masks representing the Mackenzie, Ob, Lena, and Yukon River basins (see Fig. \ref{fig:water_cycle}), delineated using the \citet{Wu_2011} flow direction raster dataset (Fig. \ref{fig:domain}c).
 
-We exclude coastal grid cells from our analysis and discussion because the model datasets tend to report mixed ocean–land states and fluxes, which are not directly comparable with ground observations.
+We exclude coastal grid cells from our analysis and discussion because the model datasets tend to report mixed ocean-land states and fluxes, which are not directly comparable with ground observations.
 We have also left out discussion of the land surface climate and model performance over the Greenland ice sheet and surrounding polar ice caps for two reasons: 1) there is a lack of distributed and reliable measurements of temperature and precipitation, and 2) the version of RASM that we are using in this study did not include an explicit representation of land ice.
 Last, the differences between $RASM_{ERA}$ and $RASM_{CFSR}$ are much smaller than the differences between RASM and the comparison datasets (e.g., see Fig. \ref{fig:temp_maps}).
 For this reason, the remainder of the figures in this paper will exclude the $RASM_{CFSR}$ simulation.
@@ -221,7 +220,7 @@ Annual average temperatures are less than 0$^{\circ}$C in the tundra and ice-cov
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{ch3_Fig2}
-  \caption{Seasonal and annual surface air temperature statistics for September 1989–August 2014.
+  \caption{Seasonal and annual surface air temperature statistics for September 1989-August 2014.
   (top) $RASM_{ERA}$ averages (bottom-left color bar); (second row) $RASM_{ERA}$ std dev (bottom-center color bar); and (next four rows, from top to bottom) $RASM_{ERA}$ biases compared to $RASM_{CFSR}$, $S2006$, ERA, and MERRA (bottom-right color bar).}
   \label{fig:temp_maps}
 \end{figure}
@@ -231,21 +230,21 @@ The smallest biases occur in spring and summer.
 At the highest latitudes in North America and eastern Siberia, the spring season positive temperature differences are between +2$^{\circ}$ and +6$^{\circ}$C and are most likely related to early seasonal snowmelt, although they are smaller when compared to ERA than to $S2006$.
 During fall and winter, RASM exhibits larger surface air temperature biases compared to the other datasets.
 The extent and magnitude of these biases suggest better agreement among the comparison datasets during fall and winter than during spring and summer.
-In western Siberia, a strong cold bias of between −6$^{\circ}$ and −8$^{\circ}$C is related to a negative bias in downward longwave radiation (discussed in section 4b).
+In western Siberia, a strong cold bias of between -6$^{\circ}$ and -8$^{\circ}$C is related to a negative bias in downward longwave radiation (discussed in section 4b).
 The combination of moderate warm biases in the warm season and strong cold biases in the cool season results in a seasonal cycle with a larger amplitude than reanalysis and observations, accompanied by steeper transitions in the shoulder seasons, especially in fall (Fig. \ref{fig:energy_cycle}).
 
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{ch3_Fig3}
-  \caption{Average annual cycles of surface air temperature (Tair), albedo, net shortwave radiation (SWnet), net longwave radiation (LWnet), latent heat (LE), and sensible heat (H) for tundra, taiga, the RVIC drainage, and the full model domain for the time period of September 1989–August 2014.}
+  \caption{Average annual cycles of surface air temperature (Tair), albedo, net shortwave radiation (SWnet), net longwave radiation (LWnet), latent heat (LE), and sensible heat (H) for tundra, taiga, the RVIC drainage, and the full model domain for the time period of September 1989-August 2014.}
   \label{fig:energy_cycle}
 \end{figure}
 
 \subsection{Radiative fluxes}
 
-The annual cycle of downward shortwave radiation has a large amplitude at high latitudes, with some polar regions receiving less than 30 W m$^{−2}$ in the winter and more than 300 W m$^{−2}$ in the summer.
+The annual cycle of downward shortwave radiation has a large amplitude at high latitudes, with some polar regions receiving less than 30 $W m^{-2}$ in the winter and more than 300 $W m^{-2}$ in the summer.
 While clear-sky downward shortwave radiation is only a function of season and latitude, the downward shortwave radiation at the surface also depends on cloud amount and details of the cloud microphysics, which depend on interactions between the atmospheric model boundary layer, microphysics, and radiative transfer schemes.
-In RASM, midlatitudes receive 30–50 W m$^{−2}$ more downward shortwave than in ERA, MERRA, and $S2006$, while higher latitudes generally receive less, especially in summer (Fig. S1 in the supplemental material).
+In RASM, midlatitudes receive 30-50 $W m^{-2}$ more downward shortwave than in ERA, MERRA, and $S2006$, while higher latitudes generally receive less, especially in summer (Fig. S1 in the supplemental material).
 In general, the biases in downward radiation in RASM result from too few clouds over midlatitude land areas throughout the year.
 The nature of these biases is discussed in detail by \citet{Cassano_2016}.
 
@@ -264,44 +263,44 @@ Upward longwave radiation is solely a function of the radiative temperature of t
 The negative bias in upward longwave in Siberia is reflective of the cold bias in this area.
 
 The combination of downward shortwave and downward longwave radiation is referred to as the total downward radiation and shown in Fig. \ref{fig:drad_maps}.
-Total downward radiation has a large seasonal amplitude and a strong zonal gradient, with winter minima at high latitudes less than 150 W m$^{−2}$, and summer maxima at midlatitudes more than 700 W m$^{−2}$.
+Total downward radiation has a large seasonal amplitude and a strong zonal gradient, with winter minima at high latitudes less than 150 $W m^{-2}$, and summer maxima at midlatitudes more than 700 $W m^{-2}$.
 Compared to ERA and $S2006$, RASM has positive biases at midlatitudes and negative biases at high latitudes, a combination of the previously discussed biases in downward shortwave and longwave radiation.
 
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{ch3_Fig4}
-  \caption{Seasonal and annual total downward radiation statistics for September 1989–August 2014.
+  \caption{Seasonal and annual total downward radiation statistics for September 1989-August 2014.
   (top) $RASM_{ERA}$ averages (bottom-left color bar); (second row) $RASM_{ERA}$ std dev (bottom-center color bar); and (next three rows, from top to bottom) $RASM_{ERA}$ biases compared to $S2006$, ERA, and MERRA (bottom-right color bar).}
   \label{fig:drad_maps}
 \end{figure}
 
 Net radiation is the difference between total downward radiation and the sum of upward longwave radiation and reflected shortwave radiation.
-At high latitudes, average annual net radiation is negative (from −30 to −50 W m$^{−2}$) across most of the pan-Arctic region in the winter (Fig. \ref{fig:nrad_maps}).
-Over most of the domain, the net radiation at the surface in RASM is within 15 W m$^{−2}$ of $VIC_{S2006}$, MERRA, and ERA.
+At high latitudes, average annual net radiation is negative (from -30 to -50 $W m^{-2}$) across most of the pan-Arctic region in the winter (Fig. \ref{fig:nrad_maps}).
+Over most of the domain, the net radiation at the surface in RASM is within 15 $W m^{-2}$ of $VIC_{S2006}$, MERRA, and ERA.
 
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{ch3_Fig5}
-  \caption{Seasonal and annual net radiation statistics for September 1989–August 2014.
+  \caption{Seasonal and annual net radiation statistics for September 1989-August 2014.
   (top) $RASM_{ERA}$ averages (bottom-left color bar); (second row) $RASM_{ERA}$ std dev (bottom-center color bar); and (next three rows, from top to bottom) $RASM_{ERA}$ biases compared to $VIC_{S2006}$, ERA, and MERRA (bottom-right color bar).}
   \label{fig:nrad_maps}
 \end{figure}
 
 \subsection{Turbulent fluxes}
 
-Surface turbulent heat fluxes are perhaps the least constrained flux variables in coupled land–atmosphere models.
+Surface turbulent heat fluxes are perhaps the least constrained flux variables in coupled land-atmosphere models.
 Estimates of sensible and latent heat flux from the MERRA and ERA reanalysis products are computed entirely within the reanalysis land surface model and are not directly constrained by data assimilation.
-\citet{Lindsay_2014} highlight that point in their intercomparison of seven reanalysis products over the pan-Arctic domain, citing intermodel variations in the seasonal sensible and latent heat fluxes in some regions on the order of 50 W m$^{−2}$.
+\citet{Lindsay_2014} highlight that point in their intercomparison of seven reanalysis products over the pan-Arctic domain, citing intermodel variations in the seasonal sensible and latent heat fluxes in some regions on the order of 50 $W m^{-2}$.
 RASM and the reanalysis products simulate a regional maximum latent heat flux across the taiga in the summer (Fig. \ref{fig:energy_cycle}).
-In RASM, the sensible heat flux in the midlatitudes is from +10 to +40 W m$^{−2}$ greater than in ERA and MERRA during summer.
+In RASM, the sensible heat flux in the midlatitudes is from +10 to +40 $W m^{-2}$ greater than in ERA and MERRA during summer.
 RASM latent heat fluxes tend to be lower than both ERA and MERRA but are closer to the empirical estimates of J2011 (Fig. S5 in the supplemental material).
 
 The annual cycle of the latent heat flux is largely driven by the seasonal cycle of net shortwave radiation.
 In the winter season (DJF), the latent heat flux is nearly zero across the entire RASM domain (Fig. S5).
-The latent heat flux is largest in the summer over the taiga, with a seasonal averaged latent heat flux near 80 W m$^{−2}$.
+The latent heat flux is largest in the summer over the taiga, with a seasonal averaged latent heat flux near 80 $W m^{-2}$.
 The spatial distribution of the seasonally averaged latent heat flux varies substantially among models (e.g., RASM, MERRA, and ERA).
-Local differences in the simulated latent heat flux can be as large as 50 W m$^{−2}$.
-Averaged over the taiga, the summer season (JJA) latent heat flux is more than +20 W m$^{−2}$ larger in MERRA than in the RASM, ERA, or J2011 datasets.
+Local differences in the simulated latent heat flux can be as large as 50 $W m^{-2}$.
+Averaged over the taiga, the summer season (JJA) latent heat flux is more than +20 $W m^{-2}$ larger in MERRA than in the RASM, ERA, or J2011 datasets.
 As discussed below, these differences in the latent heat flux are consistent with the differences in the partitioning of evapotranspiration and runoff.
 
 The sensible heat has a more distinct zonal gradient than the latent heat flux, with the largest sensible heat fluxes in the southern portions of the domain (Fig. S6 in the supplemental material).
@@ -309,7 +308,7 @@ This gradient is stronger in RASM than in MERRA, ERA, or J2011.
 The differences in the sensible heat flux when compared to MERRA and ERA are closely related to the differences in total downward radiation.
 RASM simulated winter season sensible heat is negative over most of the domain, especially over the high latitudes.
 A negative sensible heat flux represents an energy flux from the atmosphere to the land surface or heating of the land by the atmosphere.
-The ERA, MERRA, and J2011 datasets agree with this behavior although the spread among the models is as large as 30 W m$^{−2}$.
+The ERA, MERRA, and J2011 datasets agree with this behavior although the spread among the models is as large as 30 $W m^{-2}$.
 Intermodel differences in the sensible heat flux can be as large as the differences in the latent heat flux.
 In the case of RASM, the biases have a zonal structure that is likely tied to biases in downward radiation rather than vegetation.
 
@@ -321,7 +320,7 @@ Figure \ref{fig:energy_cycle} demonstrates that RASM follows this asymmetry in t
 
 Figure \ref{fig:prec_maps} shows the spatial distribution of RASM precipitation.
 The spatial pattern of precipitation in the Arctic is highly heterogeneous.
-Significant portions of the domain receive less than 300 mm yr−1 (0.8 mm day$^{−1}$), while some coastal and midlatitude regions receive over 1500 mm yr−1 (4.1 mm day$^{−1}$).
+Significant portions of the domain receive less than 300 $mm yr^{-1}$ (0.8 $mm day^{-1}$), while some coastal and midlatitude regions receive over 1500 $mm yr^{-1}$ (4.1 $mm day^{-1}$).
 Precipitation is largest in the summer across most of the pan-Arctic region.
 In most cases, RASM simulates larger amounts of orographic precipitation (e.g., west coast of North America) compared to MERRA and ERA, likely as a result of its higher spatial resolution and therefore greater ability to resolve topography.
 
@@ -329,7 +328,7 @@ In most cases, RASM simulates larger amounts of orographic precipitation (e.g., 
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{ch3_Fig6}
-  \caption{Seasonal and annual precipitation statistics for September 1989–August 2014.
+  \caption{Seasonal and annual precipitation statistics for September 1989-August 2014.
   (top) $RASM_{ERA}$ averages (bottom-left color bar); (second row) $RASM_{ERA}$ std dev (bottom-center color bar); and (next four rows, from top to bottom) $RASM_{ERA}$ biases compared to $S2006$, ERA, MERRA, and A2006 (bottom-right color bar).}
   \label{fig:prec_maps}
 \end{figure}
@@ -339,12 +338,12 @@ RASM effectively captures the seasonal cycle of precipitation, with the largest 
 While most of the datasets show similar amounts of accumulated cold-season precipitation, $S2006$ stands out as being particularly dry, leading to less snow accumulation.
 The annual cycle of runoff in the Arctic is driven by spring snowmelt and summer precipitation.
 RASM captures this pulse in melt season runoff in each of the basins shown in Fig. \ref{fig:water_cycle}.
-For $RASM_{ERA}$, $VIC_{S2006}$, ERA, and MERRA there are significant differences in seasonality of basin-averaged runoff compared to R-ArcticNET with the spring freshet in most datasets preceding the observations by 1–2 months.
+For $RASM_{ERA}$, $VIC_{S2006}$, ERA, and MERRA there are significant differences in seasonality of basin-averaged runoff compared to R-ArcticNET with the spring freshet in most datasets preceding the observations by 1-2 months.
 
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{ch3_Fig7}
-  \caption{Average annual cycles of Tair, precipitation (P), accumulated precipitation (Pa), snow water equivalent (SWE), streamflow (Q), and evapotranspiration (ET) for four of the largest river basins in the RASM domain for the time period of September 1989–August 2014.}
+  \caption{Average annual cycles of Tair, precipitation (P), accumulated precipitation (Pa), snow water equivalent (SWE), streamflow (Q), and evapotranspiration (ET) for four of the largest river basins in the RASM domain for the time period of September 1989-August 2014.}
   \label{fig:water_cycle}
 \end{figure}
 
@@ -356,7 +355,7 @@ Basin-averaged differences correspond largely to differences in cool season prec
 The annual cycle of basin-averaged snow water equivalent in RASM is generally closer to that of MERRA than ERA.
 
 Figure \ref{fig:snow} compares snow cover north of 50$^{\circ}$N (defined in RASM and the reanalysis products as grid cells with average SWE >1 mm) to the National Snow and Ice Data Center weekly snow cover data product.
-Note that the uncertainty in the satellite estimated snow cover extent is on the order of 5\%–10\% in the spring \citep{Brown_2011}.
+Note that the uncertainty in the satellite estimated snow cover extent is on the order of 5\%-10\% in the spring \citep{Brown_2011}.
 Additional uncertainty is introduced in our analysis through the comparison between model snow cover derived using a grid cell average SWE threshold and remote sensing estimates of snow cover.
 RASM simulated snow cover extent north of 50$^{\circ}$N reaches a maximum by the start of January and a minimum by the end of June.
 RASM’s increase in snow-covered area in fall closely follows the MERRA and NSIDC datasets and its onset of spring melt matches NSIDC.
@@ -372,7 +371,7 @@ Increase in snow-covered area in the $VIC_{S2006}$ simulation lags by more than 
   \caption{Number of snow-covered days per year for (top left) RASM and (top right) NSIDC.
   (bottom left) Difference between numbers of snow-covered days per year in (top).
   (bottom right) Annual cycle of snow-covered area north of 50$^{\circ}$N.
-  Time period is September 1989–August 2014.}
+  Time period is September 1989-August 2014.}
   \label{fig:snow}
 \end{figure}
 
@@ -382,25 +381,25 @@ Increase in snow-covered area in the $VIC_{S2006}$ simulation lags by more than 
 In uncoupled land surface simulations, models are frequently evaluated on the basis of their ability to capture key terms in the hydrologic cycle, such as snow water equivalent, streamflow, soil moisture, and evapotranspiration.
 These models are often calibrated using objective functions that target only one or two of these variables.
 In many cases, these calibrations, or parameter selection techniques, achieve good statistical representation of the target variables without additional assessment of the remaining fluxes and states in the model.
-In the process of developing the VIC–WRF coupling in RASM, we have found it necessary to take a holistic approach to assess model performance.
+In the process of developing the VIC-WRF coupling in RASM, we have found it necessary to take a holistic approach to assess model performance.
 Our focus has been on improving the representation of individual processes and understanding how individual processes contribute to the climate system rather than achieving an optimal calibration.
 
 The land surface is coupled to the atmosphere via three primary mechanisms: surface radiation exchange, turbulent heat flux exchange, and the partitioning of precipitation into evapotranspiration and runoff.
-Our analysis of the surface energy budget in the RASM domain indicates that differences in the downward radiation forcings (±50 W m$^{−2}$), compared to reanalysis and $S2006$, may be large enough to affect the land surface model performance.
-An example of this is in western Siberia during the winter and fall when RASM shows less downward longwave radiation than the reanalysis products, leading to local surface air temperature biases between −4$^{\circ}$ and −8$^{\circ}$C as compared to ERA.
+Our analysis of the surface energy budget in the RASM domain indicates that differences in the downward radiation forcings (±50 $W m^{-2}$), compared to reanalysis and $S2006$, may be large enough to affect the land surface model performance.
+An example of this is in western Siberia during the winter and fall when RASM shows less downward longwave radiation than the reanalysis products, leading to local surface air temperature biases between -4$^{\circ}$ and -8$^{\circ}$C as compared to ERA.
 
 The largest control on the terrestrial surface energy budget is the surface albedo.
 During winter and spring, the tundra is snow-covered and its albedo can be 6 times higher than in the adjacent taiga \citep{Chapin_2000b} where vegetation with much lower albedo protrudes through the snow.
 Early RASM simulations did not include a vegetation-dependent maximum snow albedo, resulting in cool season albedos in vegetated areas that were much higher than observations.
-These high values in surface albedo were accompanied by negative surface air temperature biases over much of the tundra and taiga that were as large as −10$^{\circ}$C.
+These high values in surface albedo were accompanied by negative surface air temperature biases over much of the tundra and taiga that were as large as -10$^{\circ}$C.
 Applying a vegetation-dependent maximum snow albedo resulted in a lower surface albedo (Fig. \ref{fig:albedo_maps}) and reduced the surface air temperature bias throughout the cool season.
-These results extend the findings of \citet{Viterbo_1999}, who reduced the snow-covered vegetation albedo from 0.8 over the taiga to 0.2 in ECMWF’s global forecast model resulting in a reduction of surface air temperature bias from more than −8$^{\circ}$C to less than −2$^{\circ}$C.
+These results extend the findings of \citet{Viterbo_1999}, who reduced the snow-covered vegetation albedo from 0.8 over the taiga to 0.2 in ECMWF’s global forecast model resulting in a reduction of surface air temperature bias from more than -8$^{\circ}$C to less than -2$^{\circ}$C.
 
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{ch3_Fig9}
   \caption{Surface albedos for (top) March and (bottom) September for (left) the original VIC albedo schemes, (center) the albedo schemes used in RASM (e.g., VICNEW), and (right) the GlobAlbedo remote sensing product.
-  Time period is 1998–2007.}
+  Time period is 1998-2007.}
   \label{fig:albedo_maps}
 \end{figure}
 
@@ -416,7 +415,7 @@ This is particularly apparent during the spring and summer months in the high la
 \begin{figure}
   \centering
   \includegraphics[width=15cm,keepaspectratio]{ch3_Fig10}
-  \caption{Spring, summer, and fall Bowen ratios for $RASM_{ERA}$, $VIC_{S2006}$, ERA, MERRA, and J2011 for the time period of September 1989–August 2014.}
+  \caption{Spring, summer, and fall Bowen ratios for $RASM_{ERA}$, $VIC_{S2006}$, ERA, MERRA, and J2011 for the time period of September 1989-August 2014.}
   \label{fig:bowen}
 \end{figure}
 
@@ -430,7 +429,7 @@ The BOREAS and Happy Valley sites are representative of the taiga and tundra loc
 RASM’s diurnal temperature range (DTR) at the BOREAS site is similar to the observed DTR (about 10$^{\circ}$C) despite being about 2$^{\circ}$C colder on average.
 At the tundra site, however, the RASM-simulated DTR (about 5$^{\circ}$C) is much smaller than the observed 9$^{\circ}$C.
 At both locations, net radiation is similar to the observations in terms of magnitude and diurnal timing and is mostly determined by the atmospheric forcing of downward radiation.
-The timing of the diurnal cycle of the latent heat and the sensible heat fluxes in RASM is similar at both the taiga and tundra sites, and the differences in the magnitude are typically less than 40 W m$^{−2}$.
+The timing of the diurnal cycle of the latent heat and the sensible heat fluxes in RASM is similar at both the taiga and tundra sites, and the differences in the magnitude are typically less than 40 $W m^{-2}$.
 Averaged over the month of July, RASM and observed Bowen ratios at the BOREAS site were 0.89 and 1.27, respectively, and were 0.88 and 0.69 at the Happy Valley site.
 
 \begin{figure}
@@ -445,10 +444,10 @@ Averaged over the month of July, RASM and observed Bowen ratios at the BOREAS si
 On annual time scales, surface and subsurface runoff from the land surface can be thought of as the difference between precipitation and evapotranspiration, assuming no change in storage.
 Since we lack the ability to effectively measure evapotranspiration across large areas, in situ observations of streamflow and gridded observations of precipitation enable us to evaluate the overall water balance.
 Figure \ref{fig:streamflow_scatter} shows climatological, basin-averaged precipitation, runoff, and runoff ratios from the A2006 precipitation and R-ArcticNET (Fig. \ref{fig:domain}d) runoff datasets and compares these to the same quantities based on $RASM_{ERA}$, $VIC_{S2006}$, MERRA, and ERA.
-Compared to A2006 precipitation, $RASM_{ERA}$ has the lowest root-mean-square error (RMSE) and bias of all the models, +0.3 and +0.0072 mm day$^{−1}$ respectively.
-$VIC_{S2006}$, which is forced using $S2006$, has a negative bias (−0.34 mm day$^{−1}$) compared to A2006, especially in wetter basins (those with precipitation greater than 1.75 mm day$^{−1}$).
+Compared to A2006 precipitation, $RASM_{ERA}$ has the lowest root-mean-square error (RMSE) and bias of all the models, +0.3 and +0.0072 mm day$^{-1}$ respectively.
+$VIC_{S2006}$, which is forced using $S2006$, has a negative bias (-0.34 mm day$^{-1}$) compared to A2006, especially in wetter basins (those with precipitation greater than 1.75 mm day$^{-1}$).
 All of the datasets are biased low with respect to runoff compared to R-ArcticNET.
-$RASM_{ERA}$ and ERA have the smallest biases, −0.12 and −0.021 mm day$^{−1}$, respectively, while the $VIC_{S2006}$ and MERRA datasets have biases of −0.3 and −0.4 mm day$^{−1}$, respectively.
+$RASM_{ERA}$ and ERA have the smallest biases, -0.12 and -0.021 mm day$^{-1}$, respectively, while the $VIC_{S2006}$ and MERRA datasets have biases of -0.3 and -0.4 mm day$^{-1}$, respectively.
 Although the differences in precipitation between MERRA and A2006 are not large, annual runoff from MERRA is substantially lower than observed at nearly all gauge locations, indicating systemic overestimation of evapotranspiration (and thus the latent heat flux) in MERRA.
 This finding aligns with the results shown in Figs. \ref{fig:snow} and \ref{fig:bowen}, in which MERRA is shown to have larger evapotranspiration and latent heat fluxes and smaller Bowen ratios than RASM or ERA.
 \citet{Shiklomanov_2006} estimated annual runoff measurement errors in the largest six Eurasian rivers between 1.5\% and 3.5\%.
@@ -462,7 +461,7 @@ RASM, ERA, and $VIC_{S2006}$ overpredict low runoff ratios and underpredict high
   \includegraphics[width=10cm,keepaspectratio]{ch3_Fig12}
   \caption{Comparison of observed P from A2006 and Q from R-ArcticNET to $RASM_{ERA}$, $RASM_{CFSR}$, $VIC_{S2006}$, MERRA, and ERA at 379 individual basins.
   The blue line is a locally weighted scatterplot smoothing (LOWESS) best-fit model.
-  The RMSE (mm day$^{−1}$) and bias (mm day$^{−1}$) statistics are shown in the top-left corner of each panel.
+  The RMSE (mm day$^{-1}$) and bias (mm day$^{-1}$) statistics are shown in the top-left corner of each panel.
   Climatological mean of coincident records between September 1980 and August 2014.}
   \label{fig:streamflow_scatter}
 \end{figure}
@@ -478,7 +477,7 @@ This explains in part why MERRA’s precipitation is reasonable despite more eva
 
 The need to evaluate land surface model performance in a coupled environment is demonstrated by the substantial differences in model results between the coupled and uncoupled VIC simulations ($RASM_{ERA}$ and $VIC_{S2006}$), distinctions that warrant further investigation.
 For example, in the coupled environment, biases in atmospheric forcings, such as the cold season negative bias in downward longwave radiation in $RASM_{ERA}$, result in biases at the land surface and feedbacks to the atmosphere through the surface energy budget.
-In the uncoupled environment, the atmospheric forcing is prescribed so that most of the land–atmosphere feedback processes are ignored.
+In the uncoupled environment, the atmospheric forcing is prescribed so that most of the land-atmosphere feedback processes are ignored.
 
 \section{Conclusions}
 \label{sec:conclusions_ch3}
@@ -499,7 +498,7 @@ We have found that these relationships can also be applied to the surface energy
 Among $RASM_{ERA}$, ERA, and MERRA, we have found a wide range in the sensible and latent heat fluxes.
 MERRA tends to have a larger latent heat flux and a smaller Bowen ratio than $RASM_{ERA}$ and ERA, which is consistent with MERRA’s low runoff ratio.
 
-Ongoing development of the RASM land surface and land–atmosphere coupling includes improved treatment of ground heat flux and canopy processes, increased spatial resolution, and coupling of new submodel components including a subgrid glacier model and a dynamic vegetation model.
+Ongoing development of the RASM land surface and land-atmosphere coupling includes improved treatment of ground heat flux and canopy processes, increased spatial resolution, and coupling of new submodel components including a subgrid glacier model and a dynamic vegetation model.
 
 {\bf Acknowledgments}
 This research was supported under U.S. Department of Energy (DOE) Grants DE-FG02-07ER64460 and DE-SC0006856 to the University of Washington, and DE-SC0006178 to the University of Colorado.
