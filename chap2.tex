@@ -45,12 +45,15 @@ Conversely, forcing regional models at their boundaries limit the degrees of fre
 \section{Application}
 
 The RASM domain includes the entire Arctic drainage basin and encompasses the historical extent of seasonal sea ice cover.
-For the work presented in this dissertation, RASM is applied exclusively over a 50-km near equal-area stereographic grid (Figure \ref{fig:rasm}b).
+For the work presented in this dissertation, the land, atmosphere, and runoff components in RASM are applied over a 50-km near equal-area stereographic grid, while the ocean and sea ice components are applied over a $1/12^{\circ}$ rotated sphere mesh (Figure \ref{fig:rasm}b).
 The individual model components (Figure \ref{fig:rasm}a) in RASM are tightly-coupled in RASM, exchanging flux variables though the flux coupler every 20 minutes.
 This coupling configuration is described by \citet{Roberts_2015a}, where the sub-daily coupling frequency is shown to be important in reproducing observed inertial frequencies in the atmosphere-ice-ocean coupling cycle.
 
 RASM version 1.0 was completed in 2015 and since then it has been used in a range of applications.
-\citet{Roberts_2015a} used RASM to develop refined ice-ocean-atmosphere coupling scheme at sub-hourly timesteps.
-They went on to show how this improvement leads to better simulation of semi-diurnal sea ice drift in RASM and in a GCM.
+\citet{Roberts_2015a} used RASM to develop refined ice-ocean-atmosphere coupling scheme for sub-hourly timesteps.
+They went on to show how this improvement leads to better simulation of inertial oscillations and semi-diurnal sea ice drift in RASM and in a CESM.
+This paper is a good example of how RASM can be used as a testbed for high-resolution climate modeling.
+RASM was used by \citet{DuVivier_2016} to evaluate characteristic patterns of atmosphere-ocean coupling resulting from strong winds along the southeast Greenland coast.
 \citet{Cassano_2016} used RASM to evaluate a range of sea ice, ocean, and atmospheric parameterizations in terms of their impact on radiation biases.
-This dissertation (chapters \ref{chap:land_surface}, \ref{chap:streamflow}, and \ref{chap:winter_prec}) represent the existing body of work related to the development and evaluation of the land surface within RASM.
+This paper has motivated the upgrade and extension of the WRF model within RASM to improve known biases in WRF's radiation and microphysics schemes, work that is currently underway.
+This dissertation (Chapters \ref{chap:land_surface}, \ref{chap:streamflow}, and \ref{chap:winter_prec}) represent the existing body of work related to the development and evaluation of the land surface within RASM.
