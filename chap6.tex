@@ -1,55 +1,58 @@
 \chapter{Conclusions and Recommendations}
 \label{chap:conclusions}
 
+\section{Conclusions}
 The primary goal of this dissertation was to develop and apply the Regional Arctic System Model (RASM) in order to better represent and understand key hydroclimatological processes in the Arctic.
-This work was motivated by four main research gaps in the Arctic: 1) the need to better understand specific land surface process behavior, 2) the need to better understand the coupled interactions between the land and the other core physical climate components, 3) the need to better understand how changes in the global climate system will manifest, and 4) the need to improve model capacity for process representation and prediction.
+This work was motivated by four main research needs: 1) the need to better understand land surface process behavior specific to the Arctic, 2) the need to better understand the coupled interactions between the high-latitude land surface and the other core physical climate components, 3) the need to better understand how changes in the global climate system will manifest in the Arctic, and 4) the need to improve model capacity for process representation and prediction.
 
 The development of RASM attempts to address these gaps.
 As a regional model, RASM inherently includes fewer degrees of freedom than a global model would \citep[e.g. ][]{Deser_2016}, limited by its specified horizontal boundary conditions.
-While this fact limits RASM's applicability in studies of global scale, it uniquely positions RASM to be able to be a tool for addressing regional processes.
-RASM is also computationally less expensive than global models would be if run at the same temporal and spatial resolutions, this has proven to be immensely useful in the development of RASM.
+While this fact limits RASM's applicability in studies of global scale, it uniquely positions RASM as a tool for addressing questions regarding regional processes.
+RASM is also computationally less expensive than global models would be if run at the same temporal and spatial resolutions, this has proven to be immensely useful in the development of RASM as it has allowed for numerous iterations of model versions.
 The combination of these two points support RASM's use as a testbed for high-resolution coupled model development.
 
 This dissertation was made up of three core chapters.
 The first two focused on the development and evaluation of the land surface (Chapter \ref{chap:land_surface}) and streamflow routing (Chapter \ref{chap:streamflow}) model components within RASM.
 In Chapter \ref{chap:winter_prec}, RASM was used to evaluate how changes in the sea ice cover in the Arctic Ocean impacted precipitation patterns over land.
 
-In chapter \ref{chap:land_surface}, we introduced a novel coupling of the Variable Infiltration Capacity (VIC) model within RASM.
-We evaluated VIC compared to a range of observations, such as in situ measurements of turbulent fluxes and streamflow, gridded climatological datasets of precipitation and temperature, and remote sensing estimates of snow and surface albedo.
-We also compared the performance of RASM with the ERA-Interim and MERRA global reanalysis models, identifying the largest differences in the partitioning of turbulent heat fluxes.
-Our comparisons identified areas where VIC was performing better than other coupled models (reanalyses) such as in the partitioning of precipitation into streamflow and evapotranspiration.
-We also identified areas where VIC and RASM could be improved, such as the representation of soil thermal processes and canopy processes, motivating ongoing development on the land, atmosphere, and streamflow routing model components.
+In Chapter \ref{chap:land_surface}, we introduced a novel coupling of the Variable Infiltration Capacity (VIC) model within RASM.
+We evaluated VIC compared to a range of observations, including as in situ measurements of turbulent fluxes and streamflow, gridded climatological datasets of precipitation and temperature, and remote sensing estimates of snow and surface albedo.
+We also compared the performance of RASM's land surface coupling with the ERA-Interim and MERRA global reanalysis models, identifying the largest differences in the partitioning of turbulent heat fluxes.
+Our comparisons identified areas where VIC was performing better these reanalyses, such as in the partitioning of precipitation into streamflow and evapotranspiration.
+We also identified areas where the representation of the land surface in VIC and RASM could be improved, such as the representation of soil thermal and canopy processes, motivating ongoing development on the land, atmosphere, and streamflow routing model components.
 
-In chapter \ref{chap:streamflow}, we introduced a new river routing scheme (RVIC) for coupled climate models.
-In this chapter, we extensively evaluated the model against in situ observations and other model based datasets, characterizing the sources of biases in the RASM streamflow flux.
-We illustrated the impact streamflow has on the coupled ice/ocean system using two coupled RASM simulations, one with the streamflow flux delivered to the ocean, the other without.
+We introduced a new river routing scheme (RVIC) for coupled climate models in Chapter \ref{chap:streamflow}.
+In this chapter, we evaluated streamflow simulated by RVIC in RASM against in situ observations and other model based datasets, characterizing the sources of biases in the RASM streamflow flux.
+We illustrated the impact streamflow has on the coupled ice-ocean system using two coupled RASM simulations, one with the streamflow flux delivered to the ocean, the other without.
 Associated with this chapter is a new coastal streamflow dataset for ocean modeling applications.
 This dataset is of higher spatial and temporal resolution than existing datasets used by the ocean modeling community, and provides substantial improvement in the representation of coastal streamflow in unguaged areas such as Greenland and the Canadian Archipelago.
 
 Chapter \ref{chap:winter_prec} applied RASM to better understand how winter precipitation may change given reductions in sea ice cover.
-Motivating this chapter were a pair of observation based correlation analyses that indicated that minimum annual sea ice extent and early winter precipitation (October - December) were inversely correlated across most of the pan-Arctic land areas.
+Motivating this chapter was a observation based correlation analysis that indicated that minimum annual sea ice extent and early winter precipitation (October - December) were inversely correlated across most of the pan-Arctic land areas.
 In this chapter, we evaluated three RASM simulations, with varying levels of sea ice extent, testing the hypothesis that the observed correlations between sea ice extent and high winter precipitation are related to anomalous patterns in ocean evaporation and sea ice extent in the fall season.
-A water budget analysis for the central Arctic Ocean and surrounding land mass indicated that relatively small decreases in fall season sea ice extent (3\% and 11\%) can lead to increases in evaporation from the Ocean as high 50\%.
+A water budget analysis for the central Arctic Ocean and surrounding land mass indicated that relatively small decreases in RASM-simulated fall season sea ice extent (3\% and 11\%) can lead to increases in evaporation from the Ocean as high 50\%.
 However, we show that changes in precipitation are much smaller (1-3\%).
 Finally, using a machine learning technique for pattern recognition, we go on to show that the strongest coupling between sea ice and terrestrial precipitation patterns occurs when there anomalously high ocean sourced evaporation in the Kara and Barents Sea accompanied by a northeastward shift of the Icelandic Low.
 
 Chapters \ref{chap:land_surface} and \ref{chap:streamflow} were principally model development chapters.
 While working on this dissertation, I developed the RVIC streamflow routing model \citep[see also \ref{sec:rvic_dev} ;][]{Hamman_2015,Hamman_2016b} and participated as a core development member of the VIC model \citep[see also \label{sec:vic_dev}]{Hamman_2016c,Hamman_2016d}.
-While the majority of this work mainly extended existing models or reapplied existing algorithms, my contribution has focused on extensibility and reproducibility.
-While the majority of the ideas that made up the models in chapter 2 and 3 were not new, their application in RASM required extensive effort, both in terms of software infrastructure and model tuning.
-Furthermore, the evaluation of these models required the development of unique methods for comparing datasets derived from observations and models with the goal of understanding and improving the model.
+While the majority of this work mainly extended existing models or reapplied existing algorithms, my contribution focused on implementing new features as well as improving model extensibility and reproducibility.
+While the majority of the ideas that made up the models in chapter \ref{chap:land_surface} and \ref{chap:streamflow} were not new, their application in RASM required extensive effort, both in terms of software infrastructure and model tuning.
+Furthermore, the evaluation of these models required the development of unique methods for comparing datasets derived from observations and models with the underlying objective of understanding and improving the model.
 
+\section{Recommendations}
 The development of RASM version 1.0 has enabled many new scientific opportunities.
-Each of the three core chapters in this dissertation exemplify ways that RASM can be used going forward.
-Chapter \ref{chap:land_surface} is an example of how RASM can be used as a testbed for improved performance of individual component couplings.
+Each of the three core chapters in this dissertation exemplify ways that RASM can be used in the future.
+Chapter \ref{chap:land_surface} is an example of how RASM can be used as a testbed for improved model performance of individual component couplings.
+This chapter discusses specific examples of how, during the development of RASM version 1.0, we implemented new approaches to improve the representation of the land surface in RASM.
 Chapter \ref{chap:streamflow} is an example of how RASM can be used to evaluate the impact additional process representation (e.g. streamflow) has in the coupled model.
 Chapter \ref{chap:streamflow} also exemplifies how RASM may be used for dataset development, providing improved forcing data for uncoupled model applications.
 Finally, Chapter \ref{chap:winter_prec} provides an example of how RASM can be used to test the sensitivity of coupled processes at a regional scale, apart from global feedbacks.
 
 Both RASM and VIC continue to be actively developed.
-The further development of the VIC land surface scheme has been possible by the recently release of VIC version 5.0 \citep[see also \label{sec:vic_dev}]{Hamman_2016c,Hamman_2016d}.
+Further development of the VIC land surface scheme has been enabled by the recent release of VIC version 5.0 \citep[see also \label{sec:vic_dev}]{Hamman_2016c,Hamman_2016d}.
 The incorporation of this updated version of VIC within RASM will allow for improved representation of soil thermal processes (e.g. permafrost), canopy-atmosphere interactions, and blowing snow.
 The application and evaluation of RASM at higher spatial resolutions is also an import next step in the development of the project.
-Eight years ago, when the RASM project began, 50 km was relatively high-resolution for a regional climate model and about 2-4 times higher resolution than typical global models.
+Eight years ago, when the RASM project began, 50 km spatial resolution was relatively high for a regional climate model and about 2-4 times higher resolution than typical global models.
 In the years since, global models have steadily increased their resolution with many CMIP5 models using 1 degree spatial resolution (111 km at the equator, less in the Arctic).
 Future development of RASM should focus on making RASM truly standout high-resolution regional model by increasing spatial resolution to 10-25 km.
