@@ -24,8 +24,8 @@ Finally, we use the Self-Organizing Map (SOM) machine learning technique to iden
 \section{Introduction}
 \label{sec:intro_ch5}
 
-In the past three decades, the Arctic region has experienced unprecedented changes in key cryospheric processes.
-Rapid declines in sea ice cover have been accompanied by reductions in permafrost extent and spring snow cover, as well as increases in winter precipitation and winter snow accumulations \citep{Kohler_2006,Callaghan_2011,Bulygina_2009}.
+Over the past three decades, the Arctic region has experienced unprecedented changes in key cryospheric processes.
+Rapid declines in sea ice cover have been accompanied by reductions in permafrost extent and spring snow cover, as well as increases in winter precipitation and winter snow accumulations \citep{Kohler_2006,Callaghan_2011,Bulygina_2009}. % BN: Do these increases show any specific spatial patterns or are they uniform over the domain?
 These combined changes have had a marked impact on the regional and global climate systems.
 Driving much of these changes has been a regional warming trend that is nearly twice as large as the global mean \citep{Serreze_2006c,Screen_2010}.
 This disparity in temperature increases is often referred to as Arctic Amplification and is largely explained by the ice-albedo feedback \citep{Curry_1995}.
@@ -33,10 +33,10 @@ While this is likely the primary mechanism that leads to rapid warming in the Ar
 One such feedback process relates the state and fluxes of the Arctic Ocean (sea surface temperatures or SSTs, sea ice cover, evaporation) to precipitation over land, which modulates winter snow cover and permafrost health.
 
 Observational evidence of an amplified hydrologic cycle \citep{Stocker_2005} has been found in the form of increasing precipitation \citep{Rawlins_2006}, runoff \citep{Peterson_2002}, and winter snow accumulations \citep{Kohler_2006,Bulygina_2009}.
-While global average precipitation is expected to increase following a response to warming via the Clausius-Clapeyron relationship \citep[e.g. ][]{Held_2006,Stephens_2008,Byrne_2015}, precipitation increases in the Arctic are expected to exceed the global average \citep{Stocker_2005}.
-Analysis of the collection Earth system models (ESMs) in the Coupled Model Intercomparison Project Phase 5 \citep[CMIP5; ][]{Taylor_2012} by \citet{Bintanja_2014} indicates that annual precipitation changes in the Arctic may exceed 50\%, with the largest relative increases in the winter over the Arctic Ocean when precipitation has typically been low.
+While global average precipitation is expected to increase following a response to warming via the Clausius-Clapeyron relationship \citep[e.g.][]{Held_2006,Stephens_2008,Byrne_2015}, precipitation increases in the Arctic are expected to exceed the global average \citep{Stocker_2005}.
+Analysis of the collection of Earth system models (ESMs) in the Coupled Model Intercomparison Project Phase 5 \citep[CMIP5; ][]{Taylor_2012} by \citet{Bintanja_2014} indicates that annual precipitation changes in the Arctic may exceed 50\%, with the largest relative increases in the winter over the Arctic Ocean when precipitation has typically been low.
 \citet{Bintanja_2014} also identify that most of these changes are due to precipitation sourced from enhanced local evaporation related to retreating sea ice.
-This somewhat contradicts previous work that suggested increased poleward moisture transport as the main driver of Arctic precipitation increases.
+This somewhat contradicts previous work that suggested increased poleward moisture transport as the main driver of Arctic precipitation increases. % BN: Needs reference
 Combined with the large intermodel spread of precipitation changes in their study, this contradiction brings into question the sensitivity of the response of Arctic precipitation to reduced sea ice in modern ESMs.
 ESMs, along with statistical models, tend to poorly represent the observed decline in summer sea ice extent.
 This is evidenced by the intermodel spread among the 39 ESMs analyzed by \citet{Bintanja_2014}.
@@ -49,7 +49,7 @@ Further permafrost degradation may be attributed to earlier spring snow melt dri
 
 How the Arctic climate will respond to such large temperature and sea ice changes has been at the forefront of recent studies \citep[e.g. ][]{Kazutoshi_2014,Simmonds_2014,Wegmann_2015,Vihma_2014}.
 Here, we investigate the relationship between Arctic winter precipitation, ocean evaporation, and sea ice extent to better understand the terrestrial precipitation response to the ongoing sea ice decline.
-Our a priori hypothesis is that the reductions in sea ice extent would lead to increases in evaporation from the central portions of the Arctic Ocean and precipitation over land during the fall and early winter months.
+Our a priori hypothesis is that the reductions in sea ice extent lead to increases in evaporation from the central portions of the Arctic Ocean and precipitation over land during the fall and early winter months.
 We explore this hypothesis using three simulations spanning a range of sea ice climates from a fully-coupled regional ESM described in Section \ref{sec:data_models_ch5}.
 In Section \ref{sec:results_ch5} we present our analysis of these simulations, first computing the regional freshwater budget following \citet{Serreze_2006a}, then using the Self-Organizing Map (SOM) machine learning technique for dimension reduction and pattern evaluation \citep{Kohonen_1998,Hewitson_2002}.
 
@@ -59,8 +59,8 @@ In Section \ref{sec:results_ch5} we present our analysis of these simulations, f
 \subsection{Models}
 \label{sec:models}
 We use three simulations from the Regional Arctic System Model \citep[RASM; ][]{Hamman_2016a,Roberts_2015a}.
-RASM is a high-resolution, fully-coupled regional ESM that has been recently developed to improve the representation of coupled Arctic processes.
-RASM is comprised of individual land \citep[see ][]{Hamman_2016a}, atmosphere \citep[see ][]{Cassano_2016}, ocean \citep[see ][]{Roberts_2015a}, sea ice \citep[see ][]{Roberts_2015a}, and runoff \citep[see ][]{Hamman_2016b} components, coupled via the CESM flux coupler \citet{Craig_2011}.
+RASM is a high-resolution, fully-coupled regional ESM that has been developed recently to improve the representation of coupled Arctic processes.
+RASM is comprised of individual land \citep[see ][]{Hamman_2016a}, atmosphere \citep[see ][]{Cassano_2016}, ocean \citep[see ][]{Roberts_2015a}, sea ice \citep[see ][]{Roberts_2015a}, and runoff \citep[see ][]{Hamman_2016b} components, coupled via the CESM flux coupler \citet{Craig_2011}. % BN: The PDF shows a question mark for this last reference
 In RASM, the atmosphere is forced at its lateral boundaries with the ERA-Interim Reanalysis \citep{Dee_2011} and the ocean's closed boundaries are relaxed to the climatology from \citet{Steele_2001}.
 It is important to note that spectral nudging is applied to temperature and winds in RASM above 500 hPa.
 From a practical perspective, this nudging means that the synoptic scale circulation patterns in all three RASM simulations closely match those of ERA-Interim \citep{Glisan_2013}.
@@ -71,7 +71,7 @@ Each of the three RASM simulations used here were run from September 1, 1979 thr
 Two sensitivity simulations, $RASM_{RSI}$ and $RASM_{RSH}$, representing intermediate and high reductions in sea ice extent are also analyzed.
 The configuration of these simulations is identical to $RASM_{CONTROL}$ except in the parameterization of sea ice albedos, which is summarized in Table \ref{table:sims}.
 Sea ice albedo is reduced in both simulations to promote accelerated spring sea ice melt and reduced sea ice extent in the summer and fall.
-This method of altering the radiative properties of sea ice allows for fully-coupled, self-consistent simulations in RASM and avoids issues with prescribing unphysical surface conditions.
+This method of altering the radiative properties of sea ice allows for fully-coupled, self-consistent simulations in RASM and avoids issues with prescribing surface conditions that are not physically-realistic or that lead to inconsistencies in the coupling fields.
 
 \begin{table}[]
     \centering
@@ -90,26 +90,27 @@ This method of altering the radiative properties of sea ice allows for fully-cou
 \subsection{Datasets}
 \label{sec:data}
 Observations of sea ice extent are taken from the National Snow and Ice Data Center (NSIDC) Weekly Sea Ice Extent product \citep{Brodzik_2013}.
-Gridded precipitations observations between 1979 and 2014 are taken from CRU TS v.3.23 \citep{Harris_2014}.
-We also used monthly mean precipitation data ERA-Interim \citep[referred to hereafter as ERA; ][]{Dee_2011} and NASA’s Modern-Era Retrospective Analysis for Research and Applications \citep[MERRA; ][]{Rienecker_2011}.
-These two datasets, originally provided at their respective native resolution of 0.75$^{\circ}$x0.75$^{\circ}$ and 0.5$^{\circ}$ x 0.667$^{\circ}$ spatial resolutions, were resampled to RASM's land/atmosphere grid for use in this study.
+Gridded precipitation observations between 1979 and 2014 are taken from CRU TS v.3.23 \citep{Harris_2014}.
+We also used monthly mean precipitation data from ERA-Interim \citep[referred to hereafter as ERA;][]{Dee_2011} and NASA's Modern-Era Retrospective Analysis for Research and Applications \citep[MERRA;][]{Rienecker_2011}.
+These two datasets, originally provided at their native resolutions of 0.75$^{\circ}$x0.75$^{\circ}$ and 0.5$^{\circ}$x0.667$^{\circ}$, respectively, were resampled to RASM's land/atmosphere grid for use in this study.
 
 \subsection{Self-Organizing Maps}
-In Section \ref{sec:rasm_results}, we present results using the Self-Organizing Map \citep{Kohonen_1998,Hewitson_2002} technique.
-SOMs are a useful technique for dimension reduction, allowing for the identification of unique climatological patterns.
-They are are a type of unsupervised machine learning, utilizing artificial neural networks to create a lower-dimensional representation of high-dimensional datasets.
-SOMs have been previously applied in studies of polar climatology to study synoptic scale atmospheric circulation \citep[e.g. ][]{Cassano_2007}, extreme weather events \citep[e.g. ][]{Cassano_2015,Glisan_2016}, and coupled ocean-atmosphere processes \citep[e.g. ][]{DuVivier_2016}.
+In Section \ref{sec:rasm_results}, we present results using the Self-Organizing Maps   \citep[SOMs][]{Kohonen_1998,Hewitson_2002}, which is a technique for dimension reduction that allows for the identification of unique climatological patterns.
+SOMs are a type of unsupervised machine learning, utilizing artificial neural networks to create a lower-dimensional representation of high-dimensional datasets.
+They have been applied previously in studies of polar climatology to study synoptic scale atmospheric circulation \citep[e.g.][]{Cassano_2007}, extreme weather events \citep[e.g.][]{Cassano_2015,Glisan_2016}, and coupled ocean-atmosphere processes \citep[e.g.][]{DuVivier_2016}.
 
-In our analysis, we trained a 2x4 SOM, using standardized ocean evaporation anomalies north of 55$^{\circ}$ N from each of the three RASM simulations described in Section \ref{sec:models} for individual fall months (October - December) between 1985 and 2014.
-In total, the training dataset was comprised of 270 months of evaporation anomalies.
-Standardized anomalies were calculated using the climatology calculated from the entire analysis period.
-We used a evaluation metric of Euclidean distance, a learning rate of 0.001, and a maximum number of iterations of 2000.
+In our analysis, we trained a 2x4 SOM, using standardized ocean evaporation anomalies north of 55$^{\circ}$ N from the three RASM simulations described in Section \ref{sec:models} for individual fall months (October - December) between 1985 and 2014.
+In total, the training dataset combines the three simulations, resulting in 270 months of evaporation anomalies.
+Standardized anomalies were calculated relative to the climatology for the entire analysis period.
+We used an evaluation metric of Euclidean distance, a learning rate of 0.001, and a maximum number of iterations of 2000.
 The shape of the 2x4 SOM was chosen to provide a sufficient number of unique patterns while maximizing the average number of samples in each pattern.
 % BN: Should the training domain be limited to that of Figure 4?  % JH: I have tried that and we can go over those results. I remember them not being particularly easy to understand.
 The SOM was initialized with random fields from a standard normal distribution. % BN: This doesn't mean much to people who have not used SOMs. What is the implication of this choice for initialization?
 % JH: True, but since there are other ways to initialize a som, I think it is important that we state our methodology.
+% BN: Right, but you need to explain what that means or what the implication is
 % BN: Are all cells independent?
 % JH: No. The each month is put into an individual node.
+% BN: I meant are the random fields spatially independent
 Further details on the SOM algorithm can be found in \citet{Reusch_2005} or \citet{Cassano_2015}.
 
 \section{Results and Discussion}
@@ -141,7 +142,7 @@ In the following sections, we will investigate possible mechanisms for this rela
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{cru_correlation}
-  \caption{Spearman rank-order correlation coefficients between observed minimum annual sea ice extent and gridded Oct-Dec precipitation from CRU. Time period 1980-2015.}
+  \caption{Spearman rank-order correlation coefficients between observed minimum annual sea ice extent and gridded October-December precipitation from CRU. Time period 1980-2015.}
   \label{fig:prec_spatial_corr}
 \end{figure}
 
@@ -158,9 +159,8 @@ Figure \ref{fig:sea_ice_box} shows box-and-whisker plots of sea ice extent from 
 Compared to $RASM_{CONTROL}$, $RASM_{RSI}$ and $RASM_{RSH}$ have reductions in minimum annual sea ice extents of 16\% and 49\% respectively.
 In the fall, these simulations include smaller reductions in mean sea ice cover of 3\% and 11\% respectively.
 However, compared to the RASM simulations, the observations of sea ice extent demonstrate significantly more interannual variability.
-Individual months can be clearly seen in \ref{fig:sea_ice_box} with the lowest values in each simulation corresponding to Octobers, the middle values corresponding to Novembers, and the highest values corresponding to Decembers.
+Individual months can be clearly seen in \ref{fig:sea_ice_box} with the lowest values in each simulation corresponding to October, the middle values corresponding to November, and the highest values corresponding to December.
 The RASM simulations have interannual standard deviations for each of these months that are 1.6 to 3.5 times smaller than the observations.
-This last point may be an artifact of the processing of the daily NSIDC timeseries and is something that we are currently looking into.
  % BN: Perhaps, but you need to discuss the odd distribution of the RASM simulations. Whereas the observation are somewhat evenly distributed across the full range of extents, the RASM simulations show an odd distribution, which appears tri-modal. They either cluster near the mean/median or near the extremes. This is true for all three simulations, which seems very odd to me. Are you sure nothing went wrong in the processing. I am very suspicious that there is not a single year that falls in large parts of the distribution of extents. As a reviewer this would be a red flag that something is not right. You need to check this figure with Andrew and include a discussion.
 
  % BN: Don't use "assert", because you can assert whatever you want but that does not make it so. In this case, I would argue that there is something fishy and you need to provide some more analysis. We cannot just say this is good enough. Representing a map with the mean sea ice extent in each state (or from a simulation that is close to the center of each cluster) may provide insight into what is going on.
@@ -170,19 +170,21 @@ This last point may be an artifact of the processing of the daily NSIDC timeseri
 \begin{figure}
   \centering
   \includegraphics[width=12cm,keepaspectratio]{seaice_boxplots}
-  \caption{Distribution of fall (Oct - Dec) sea ice extent in RASM and the NSIDC sea ice index. Time period 1985-2015.}
+  \caption{Distribution of fall (October-December) sea ice extent in RASM and the NSIDC sea ice index. Time period 1985-2015. Each dot represents a monthly mean value for a single year for October (red), November (black) and December (blue).}
   \label{fig:sea_ice_box}
 \end{figure}
 
 % water budget changes
-Figure \ref{fig:fwb} presents the freshwater budget for the three RASM simulations, summarized for the fall months (October-December).
-The total moisture convergence for the three simulations are all within 0.05\% of one another, this suggests that changes in .
+Figure \ref{fig:fwb} presents the freshwater budget for the Arctic Ocean and its terrestrial drainage area, summarized for the fall months (October-December) for the three RASM simulations.
+The total moisture convergence for the three simulations are all within 0.05\% of one another.
+This suggests that changes in the distribution of evaporation and precipitation shown in Figure \ref{fig:fwb} are sourced from within the central Arctic.
 The reductions in sea ice extent in $RASM_{RSI}$ and $RASM_{RSH}$ are coincident with increases in ocean evaporation of 13\% and 52\%, respectively.
 These changes in evaporation from the ocean translate to more modest increases in precipitation over the ocean of 3\% and 11\%.
 Associated reductions in convergence over the ocean mask, defined here as P-E between October and December, are found to be 2\% and 10\%. % BN: Is a 2% change meaningful? JH: I'm not sure what you mean.
+% BN: I mean is that just noise or signal? Just to think about
 Finally, while precipitation over land is found to increase relative to the baseline case for both $RASM_{RSI}$ and $RASM_{RSH}$, the increases are relatively small (1\% and 3\% respectively).
-These increases in precipitation are sufficient to explain the resulting change in storage (e.g. snow) over land.
-Summarizing the water budget, we find that the forced decreases in $RASM_{RSI}$ and $RASM_{RSH}$ lead to significant increases in ocean evaporation but relatively small changes in precipitation over land, despite relatively large changes in ocean evaporation.
+These increases in precipitation are sufficient to explain the resulting change in storage (mostly snow) over land since fall evapotranspiration over land remains unchanged. % BN: How do our modeled changes in storage over land compare to earlier reported changes in snow over the same period
+Summarizing the water budget, we find that the forced decreases in albedo in $RASM_{RSI}$ and $RASM_{RSH}$ lead to significant increases in ocean evaporation but relatively small changes in precipitation over land, despite relatively large changes in ocean evaporation.
 Changes in the spatial patterns of precipitation between the three RASM simulations (not shown) lack a regional signal.
 While this muted response may be partially explained by the limited interannual variability in the RASM sea ice extent, it also indicates that changes in evaporation from the Arctic Ocean will have to be accompanied with changes in circulation patterns if increases in precipitation are to be attributed to sea ice loss.
 
@@ -197,7 +199,7 @@ While this muted response may be partially explained by the limited interannual 
 % JH: I've worked to tie the SOM analysis into the story a bit better.
 
 % SOM analysis
-We have applied the Self-Organizing Maps technique on standardized evaporation anomalies across the Arctic Ocean to better understand the coupling between ocean sourced evaporation and anomalies in precipitation over land during the fall season.
+We have applied the SOM technique on standardized evaporation anomalies across the Arctic Ocean to better understand the coupling between ocean-sourced evaporation and anomalies in precipitation over land during the fall season.
 As we saw in our previous water budget analysis, fairly large relative increases in ocean evaporation led to fairly small changes in precipitation over land.
 In applying SOMs, as we do in this section, we will be able to connect regional patterns of ocean evaporation, sea ice, and atmospheric circulation to precipitation patterns over land.
 
@@ -211,21 +213,21 @@ In each of these patterns, the combined position, sign, and magnitude of evapora
 \begin{figure}
   \centering
   \includegraphics[width=14cm,keepaspectratio]{master_som}
-  \caption{Master SOM. The hit rate, shown as the percentage of all the months (270) in the training dataset in each pattern, is shown in the top left corner.}
+  \caption{Master SOM. The hit rate, shown as the percentage of all the months (270) in the training dataset that are part of each pattern, is shown in the top left corner.}
   \label{fig:master_som}
 \end{figure}
 
 % Composite SOM
 Figure \ref{fig:composite_som} presents the mapped fields for the four SOM nodes discussed above.
-Each of the mapped fields represent the composite mean of all months assigned to SOM node.
+Each of the mapped fields represents the composite mean of all months assigned to each SOM node.
 Here we focus on ocean evaporation, sea level pressure (SLP), sea ice concentration, precipitation over land, and snow water equivalent.
 For node (0,1), anomalously high evaporation rates from the North Atlantic are accompanied by anomalously low pressure in the region.
-This combination is found to lead to positive precipitation anomalies over Northern Europe.
+This combination leads to positive precipitation anomalies over Northern Europe.
 Node (0,3) exhibits positive evaporation anomalies in the Kara and Barents Seas and negative evaporation anomalies in the North Atlantic.
 SLPs for this node are anomalously high across North America from Alaska to Greenland, indicating a southward shift of the storm track.
 Corresponding precipitation anomalies for node (0,3) are positive over eastern Europe and central Siberia.
 Neither of the wet nodes have sea ice concentration anomalies that can be clearly tied to evaporation or precipitation anomalies.
-The lack of correspondence between sea ice and evaporation anomalies indicates that variability in the fall evaporation flux in RASM is largely being driven by patterns in the ocean and atmosphere.
+The lack of correspondence between sea ice and evaporation anomalies indicates that variability in the fall evaporation flux in RASM is largely being driven by patterns in the ocean and atmosphere rather than changes in sea ice.
 
 \begin{figure}
   \centering
@@ -244,18 +246,18 @@ Node (1,2) also includes positive SLP anomalies across the central Arctic.
 
 % Hit Map
 The trained SOM can be used to identify the frequency of occurrence of each pattern as a function of month (October, November, or December) and RASM simulation ($RASM_{CONTROL}$, $RASM_{RSI}$, or $RASM_{RSH}$).
-Figure \ref{fig:som_hit_freq} plots the mapping frequency, by month and simulation, for each node in the 2x4 SOM.
+Figure \ref{fig:som_hit_freq} plots the pattern frequency, by month and simulation, for each node in the 2x4 SOM.
 Node (0,1), which has a large region of positive evaporation anomalies across the North Atlantic, occurs nearly twice as frequently in $RASM_{RSH}$ as in $RASM_{CONTROL}$.
-The opposite is found in node (0,3), where the hit frequency is found to decrease under reduced sea ice conditions.
-Interestingly, the hit frequency for dry nodes [e.g. (1,0) and (1,2)] is mostly stable between the simulations.
+The opposite is found in node (0,3), where the pattern frequency is found to decrease under reduced sea ice conditions.
+Interestingly, the pattern frequency for dry nodes [e.g. (1,0) and (1,2)] is mostly stable between the simulations.
 On the whole, the SOM analysis indicates that decreasing sea ice extent and the associated evaporation changes are most likely to contribute to wetting trends over land when these changes are accompanied by a shift in atmospheric circulation [e.g. node (0,3)].
 Global climate models tend to suggest that future Arctic climate will be stormier \citep{Vavrus_2012} and that winter circulation patters may trend toward a more variable pattern.
-However, the fact that the patterns with large shifts in frequency [(0,1) and (1,2)] shift in directions that limit the impact of sea ice loss, indicates that the precipitation response may be dampened.
+However, the patterns with large shifts in frequency [(0,1) and (1,2)] change in ways that limit the impact of sea ice loss, which indicates that the precipitation response may be dampened.
 
 \begin{figure}
   \centering
   \includegraphics[width=10cm,keepaspectratio]{som_hit_freq}
-  \caption{SOM hit frequency by month and RASM simulation.}
+  \caption{SOM pattern frequency by month and RASM simulation.}
   \label{fig:som_hit_freq}
 \end{figure}
 
@@ -263,15 +265,15 @@ However, the fact that the patterns with large shifts in frequency [(0,1) and (1
 \label{sec:conclusions_ch5}
 
 We have investigated the relationship between sea ice extent and early winter precipitation over the Pan Arctic land masses.
-We have demonstrated observed interannual covariation between sea ice extent and precipitation over land.
+We have demonstrated an interannual covariation between observations of sea ice extent and precipitation over land.
 Our initial hypothesis was that variations in sea ice extent were a driving factor in precipitation over land in the fall.
-A water budget analysis highlighted that although relatively large changes in winter evaporation from the Arctic Ocean are expected (50\% in our simulation with the lowest sea ice concentration), these changes are proportionally small when compared to the precipitation flux over land.
-Furthermore, the modest increases in terrestrial fall season precipitation simulated by RASM under reduced sea ice conditions indicate that there will have to be significant circulation changes in the future if ocean sourced evaporation is likely to significantly impact precipitation over land.
+A water budget analysis highlighted that relatively large changes in fall evaporation from the Arctic Ocean are expected (50\% in our simulation with the lowest sea ice concentration), but that these changes lead to only relatively small changes in the precipitation flux over land.
+Furthermore, the modest increases in terrestrial fall season precipitation simulated by RASM under reduced sea ice conditions indicate that there will have to be significant circulation changes in the future if ocean sourced evaporation is  to significantly impact precipitation over land.
 Our SOM analysis has also pointed us in this direction, which is that the ties between evaporation and precipitation are only robust under certain atmospheric circulations.
 Across Eurasia, the dominant coupling between precipitation and Arctic Ocean evaporation requires low pressure anomalies over the central Arctic, similar to the negative phase of the Arctic Oscillation \citep{Thompson_1998}.
-Previous work by \citet{Cassano_2014}, using partially coupled global simulations with prescribed sea ice, has also indicated that reductions in sea ice extent in the fall may contribute negative sea level pressure anomalies over the Arctic Ocean.
+Previous work by \citet{Cassano_2014}, using partially coupled global simulations with prescribed sea ice, has also indicated that reductions in sea ice extent in the fall may contribute to negative sea level pressure anomalies over the Arctic Ocean.
 
-Of particular interest is the sea ice state in the Kara and Barents Seas.
+Of particular interest is the sea ice state are the Kara and Barents Seas.
 As sea ice declines, we expect that this coupling will become stronger, especially if the Arctic is to become stormier.
-We have found that sea ice retreat along the Siberian shelf and north Alaskan coast is holds less influence on precipitation regional patterns.
+We have found that sea ice retreat along the Siberian shelf and north Alaskan coast  holds less influence on precipitation regional patterns.
 In these areas, the circulation patterns (low pressure in North Pacific) tend to limit the influence of enhanced evaporation along the retreating ice edge.
