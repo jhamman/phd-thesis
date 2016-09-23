@@ -13,20 +13,20 @@ Transparent scientific software development facilitates reuse and extension and 
 
 \section{The Variable Infiltration Capacity Model}
 \label{sec:vic_dev}
-The Variable Infiltration Capacity (\textbf{VIC}) model is a macro-scale semi-distributed hydrologic model.
-\textbf{VIC} development began in the early 1990's and it has been used extensively, applied from basin to global scales.
-\textbf{VIC} has been applied in a many use cases, including the construction of hydrologic data sets, trend analysis, data evaluation and assimilation, forecasting, coupled climate modeling, and climate change impact analysis.
-Ongoing operational applications of the \textbf{VIC} model include the University of Washington's drought monitor and forecast systems, and NASA's land data assimilation systems.
-The development of \textbf{VIC} version 5 focused on reconfiguring the legacy \textbf{VIC} source code to support a wider range of modern modeling applications.
-The \textbf{VIC} source code has been moved to a public Github repository (https://github.com/UW-Hydro/VIC) to encourage participation by the broader user and developer community.
+The Variable Infiltration Capacity (VIC) model is a macro-scale semi-distributed hydrologic model.
+VIC development began in the early 1990s and it has been used extensively for hydrological studies from basin to global scales.
+VIC has been applied in a many use cases, including the construction of hydrologic data sets, trend analysis, data evaluation and assimilation, forecasting, coupled climate modeling, and climate change impact analysis.
+Ongoing operational applications of the VIC model include the University of Washington's drought monitor and forecast systems, and NASA's land data assimilation systems.
+The development of VIC version 5 focused on reconfiguring the legacy VIC source code to support a wider range of modern modeling applications.
+The VIC source code has been moved to a public Github repository to encourage participation by the broader user and developer communities.
 The reconfiguration has separated the physical core of the model from the driver, which is responsible for memory allocation, pre- and post-processing and I/O.
-\textbf{VIC} 5 includes four drivers that use the same physical model core: classic, image, CESM, and Python.
-The classic driver supports legacy \textbf{VIC} configurations and runs in the traditional time-before-space configuration.
-The image driver includes a space-before-time configuration, NetCDF I/O \citep{Rew_1990}, and uses MPI for parallel processing \citep{Gropp_1996}.
-This configuration will facilitate the direct coupling of streamflow routing, reservoir, and irrigation processes within \textbf{VIC}.
-The image driver is the foundation of the CESM driver; which couples \textbf{VIC} to CESM's CPL7 \citep{Craig_2012} and a prognostic atmosphere (see Section \ref{sec:rasm_dev} for more details).
-The Python driver provides interactive access to the functions and datatypes of \textbf{VIC's} physical core from a Python interface.
-Finally, \textbf{VIC} 5.0 is distributed with a robust test infrastructure, components of which routinely run during development using the Travis CI continuous integration service.
+VIC 5 includes four drivers that use the same physical model core: classic, image, CESM, and Python.
+The classic driver supports legacy VIC configurations and runs in the traditional time-before-space configuration.
+The image driver includes a space-before-time configuration, NetCDF I/O \citep{Rew_1990}, and uses MPI for parallel processing.
+This configuration will facilitate the direct coupling of streamflow routing, reservoir operation, and irrigation processes within VIC.
+The image driver is the foundation of the CESM driver; which couples VIC to CESM's CPL7 \citep{Craig_2012} and a prognostic atmosphere.
+The Python driver provides interactive access to the functions and datatypes of VIC's physical core from a Python interface.
+Finally, VIC 5.0 is distributed with a robust test infrastructure, components of which routinely run during development using the Travis CI continuous integration service.
 
 \textbf{VIC} 5.0 is publicly available in the following source code repository:
 
@@ -76,10 +76,10 @@ POP                & \citet{Smith_2010}        & \citet{Roberts_2015a}  & 2     
 \section{xarray}
 \label{sec:xarray_dev}
 
-\textbf{xarray} is an community built, open source project, and Python package that provides a toolkit and data structures for N-dimensional labeled arrays \citep{Hoyer_2016}.
+\textbf{xarray} is a community-built open source project and Python package that provides a toolkit and data structures for N-dimensional labeled arrays \citep{Hoyer_2016}.
 I have been contributing to the \textbf{xarray} project since May 2014 and the package has been a core tool in this dissertation.
 \textbf{xarray} includes an API inspired by pandas \citep{mckinney_2010} and the Common Data Model for self-described scientific data \citep{Rew_1990,Brown_1993}.
-Key features of the \textbf{xarray} package include label-based indexing and arithmetic, interoperability with the core scientific Python packages (e.g., pandas, NumPy \citep{Jones_2001}, Matplotlib \citep{van_der_Walt_2011}), out-of-core computation on datasets that don't fit into memory, a wide range of serialization and input/output options (e.g. netCDF, HDF, GRIB1/2), and advanced multi-dimensional data manipulation tools such as group-by and resampling.
+Key features of the \textbf{xarray} package include label-based indexing and arithmetic, interoperability with the core scientific Python packages (e.g., pandas, NumPy \citep{Jones_2001}, Matplotlib \citep{van_der_Walt_2011}), out-of-core computation on datasets that do not fit into memory, a wide range of serialization and input/output options (e.g. netCDF, HDF, GRIB1/2), and advanced multi-dimensional data manipulation tools such as group-by and resampling.
 It has been widely adopted in the geoscience community \citep[e.g.][]{xgcm,Dawson_2016a,Dawson_2016b}, but has also been used in physics \citep[e.g.][]{pycalphad}, time series analytics \citep{cesium}, and finance.
 On
 \textbf{xarray} is licensed as an open source package using the Apache, v2.0 license.
