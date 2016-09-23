@@ -1,52 +1,77 @@
-\appendix
-\raggedbottom\sloppy
-
-\chapter{Scientific Software Development}
+\chapter{Software}
 \label{chap:software}
 
-This appendix/chapter is not complete.
-
 \section{Introduction}
-In conjunction with the preparation of this dissertation, I have had the opportunity to contribute to a range of open source software projects.
-In this section, I briefly introduce the main projects that I have contributed to and that contributed to this dissertation.
-Some of these tools were developed specifically for the scientific research included in this chapter (e.g. RASM and RVIC) while others were tools used for processing and analysis of scientific data (e.g. xarray).
-VIC version 5.0.0 was a major development project, developed to provide additional infrastructure to the VIC model and enabling a new scientific applications in RASM and other VIC applications.
+In conjunction with the preparation of this dissertation, I have had the opportunity to contribute to a variety of open source software projects.
+In this section, I briefly introduce the main projects that I have contributed to and that have been used in this dissertation.
+Some of these tools were developed specifically for the scientific research included in this chapter (e.g. \textbf{RASM} and \textbf{RVIC}) while others were tools used for processing and analysis of scientific data (e.g. \textbf{xarray}).
+\textbf{VIC} version 5.0.0 was a major development project that took nearly three years to complete.
 
-Nearly all of the software I have written and used during my time working on this dissertation is publicly available and open-source.
-With the exception of the RASM model source code, the other packages described in this section were developed entirely in the open.
-Transparent scientific software development facilitates reuse and extension and review by the broader scientific community
+Nearly all of the software I have written and used during my time working on this dissertation is publicly available under open-source.
+With the exception of the \textbf{RASM} model source code, the other packages described in this section were developed entirely in the open.
+Transparent scientific software development facilitates reuse and extension and review by the broader scientific community \citep{Ince_2012}.
 
-\section{VIC Version 5}
+\section{The Variable Infiltration Capacity Model}
 \label{sec:vic_dev}
-The Variable Infiltration Capacity (VIC) model is a macro-scale semi-distributed hydrologic model.
-VIC development began in the early 1990s and it has been used extensively, applied from basin to global scales.
-VIC has been applied in a many use cases, including the construction of hydrologic data sets, trend analysis, data evaluation and assimilation, forecasting, coupled climate modeling, and climate change impact analysis.
-Ongoing operational applications of the VIC model include the University of Washington's drought monitor and forecast systems, and NASA's land data assimilation systems.
-The development of VIC version 5 focused on reconfiguring the legacy VIC source code to support a wider range of modern modeling applications.
-The VIC source code has been moved to a public Github repository to encourage participation by the broader user and developer.
+The Variable Infiltration Capacity (\textbf{VIC}) model is a macro-scale semi-distributed hydrologic model.
+\textbf{VIC} development began in the early 1990's and it has been used extensively, applied from basin to global scales.
+\textbf{VIC} has been applied in a many use cases, including the construction of hydrologic data sets, trend analysis, data evaluation and assimilation, forecasting, coupled climate modeling, and climate change impact analysis.
+Ongoing operational applications of the \textbf{VIC} model include the University of Washington's drought monitor and forecast systems, and NASA's land data assimilation systems.
+The development of \textbf{VIC} version 5 focused on reconfiguring the legacy \textbf{VIC} source code to support a wider range of modern modeling applications.
+The \textbf{VIC} source code has been moved to a public Github repository (https://github.com/UW-Hydro/VIC) to encourage participation by the broader user and developer community.
 The reconfiguration has separated the physical core of the model from the driver, which is responsible for memory allocation, pre- and post-processing and I/O.
-VIC 5 includes four drivers that use the same physical model core: classic, image, CESM, and Python.
-The classic driver supports legacy VIC configurations and runs in the traditional time-before-space configuration.
-The image driver includes a space-before-time configuration, NetCDF I/O, and uses MPI for parallel processing.
-This configuration will facilitate the direct coupling of streamflow routing, reservoir, and irrigation processes within VIC.
-The image driver is the foundation of the CESM driver; which couples VIC to CESM's CPL7 and a prognostic atmosphere.
-The Python driver provides interactive access to the functions and datatypes of VIC's physical core from a Python interface.
-Finally, VIC 5.0 is distributed with a robust test infrastructure, components of which routinely run during development using the Travis CI continuous integration service.
+\textbf{VIC} 5 includes four drivers that use the same physical model core: classic, image, CESM, and Python.
+The classic driver supports legacy \textbf{VIC} configurations and runs in the traditional time-before-space configuration.
+The image driver includes a space-before-time configuration, NetCDF I/O \citep{Rew_1990}, and uses MPI for parallel processing \citep{Gropp_1996}.
+This configuration will facilitate the direct coupling of streamflow routing, reservoir, and irrigation processes within \textbf{VIC}.
+The image driver is the foundation of the CESM driver; which couples \textbf{VIC} to CESM's CPL7 \citep{Craig_2012} and a prognostic atmosphere (see Section \ref{sec:rasm_dev} for more details).
+The Python driver provides interactive access to the functions and datatypes of \textbf{VIC's} physical core from a Python interface.
+Finally, \textbf{VIC} 5.0 is distributed with a robust test infrastructure, components of which routinely run during development using the Travis CI continuous integration service.
 
-\section{RASM}
+\textbf{VIC} 5.0 is publicly available in the following source code repository:
+
+\hangbibentry{Hamman_2016c}
+
+A manuscript describing the development of \textbf{VIC} 5.0 is to be submitted to \textit{Geophysical Research Letters} as:
+
+\hangbibentry{Hamman_2016d}
+
+\section{The Regional Arctic System Model}
 \label{sec:rasm_dev}
 
-The RASM model has been described in detail in Chapters \ref{chap:rasm}, \ref{chap:land_surface}, \ref{chap:streamflow}.
-The source code that makes up RASM is scheduled to be released upon publication of Maslowski et al (Manuscript in preparation).
+\textbf{RASM} has been described in detail in Chapters \ref{chap:rasm}, \ref{chap:land_surface}, and \ref{chap:streamflow}.
+The source code that makes up \textbf{RASM} is scheduled to be released upon publication of Maslowski et al (Manuscript in preparation).
+\textbf{RASM} is built using the core infrastructure from the Community Earth System Model (CESM), which itself is publicly available (http://www.cesm.ucar.edu/models/cesm1.0/).
+Table \ref{table:rasm_versions} summarizes the model versions and locations of the source code for each component model in RASM.
 
-% Brunke_2016
+\begin{table}[]
+\centering
+\caption{Versions and primary citations for core RASM component models.}
+\label{table:rasm_versions}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Component} & \textbf{Primary Citation} & \textbf{RASM Citation} & \textbf{Model Version} & \textbf{Source Code}                                        \\ \hline
+VIC                & \citet{Liang_1994}        & \citet{Hamman_2016a}   & 4.0.4                  & https://github.com/UW-Hydro/VIC/releases/tag/VIC.4.0.4      \\ \hline
+RVIC               & \citet{Hamman_2016b}      & \citet{Hamman_2016b}   & 1.1.0                  & http://doi.org/10.5281/zenodo.32620                         \\ \hline
+WRF                & \citet{Skamarock_2008}    & \citet{Cassano_2016}   & 3.2                    & http://www2.mmm.ucar.edu/wrf/users/wrfv3.2/updates-3.2.html \\ \hline
+CPL7               & \citet{Craig_2012}        & \citet{Roberts_2015a}  & 7                      & http://www.cesm.ucar.edu/models/cesm1.0/cpl7/               \\ \hline
+CICE               & \citet{Hunke2015}        & \citet{Roberts_2015a}  & 5                      & http://oceans11.lanl.gov/trac/CICE                          \\ \hline
+POP                & \citet{Smith_2010}        & \citet{Roberts_2015a}  & 2                      & http://www.cesm.ucar.edu/models/cesm1.0/pop2/               \\ \hline
+\end{tabular}
+}
+\end{table}
 
-\section{RVIC}
+\section{The RVIC Streamflow Routing Model}
 \label{sec:rvic_dev}
 
-RVIC is a source-to-sink linear routing model used to route streamflows from runoff produced in macro-scale hydrologic models such as VIC.
-RVIC is written in a combination Python and C and is publicly available in \citet{Hamman_2015}
-RVIC's convolution routine included in RASM has been written in Fortran and will be distributed with the rest of the RASM source code.
+\textbf{RVIC} is a source-to-sink linear routing model used to route streamflows from runoff produced in macro-scale hydrologic models such as \textbf{VIC}.
+\textbf{RVIC} is written in a combination Python and C and is publicly available in \citet{Hamman_2015}
+\textbf{RVIC's} convolution routine included in \textbf{RASM} has been written in Fortran and will be distributed with the rest of the \textbf{RASM} source code.
+
+\textbf{RVIC} 1.1 is publicly available in the following source code repository:
+
+\hangbibentry{Hamman_2015}
 
 \section{xarray}
 \label{sec:xarray_dev}
@@ -57,6 +82,8 @@ I have been contributing to the \textbf{xarray} project since May 2014 and the p
 Key features of the \textbf{xarray} package include label-based indexing and arithmetic, interoperability with the core scientific Python packages (e.g., pandas, NumPy \citep{Jones_2001}, Matplotlib \citep{van_der_Walt_2011}), out-of-core computation on datasets that don't fit into memory, a wide range of serialization and input/output options (e.g. netCDF, HDF, GRIB1/2), and advanced multi-dimensional data manipulation tools such as group-by and resampling.
 It has been widely adopted in the geoscience community \citep[e.g.][]{xgcm,Dawson_2016a,Dawson_2016b}, but has also been used in physics \citep[e.g.][]{pycalphad}, time series analytics \citep{cesium}, and finance.
 On
-\textbf{xarray} is licensed as an open
-source package using the Apache, v2.0 license.
-A complete description of \textbf{xarray} is available in \citet{Hoyer_2016} and in the \textbf{xarray} documentation \citep{xarray_docs}.
+\textbf{xarray} is licensed as an open source package using the Apache, v2.0 license.
+
+A complete description of \textbf{xarray} is available as
+
+\hangbibentry{Hoyer_2016}

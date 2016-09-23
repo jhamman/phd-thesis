@@ -59,7 +59,7 @@
 \DeclareGraphicsExtensions{.pdf, .png, .jpg, .eps}
 \graphicspath{{./figs/ch1/}{./figs/ch2/}{./figs/ch3/}{./figs/ch4/}{./figs/ch5/}}
 \newcommand\hangbibentry[1]{%
-    \smallskip\par\hangpara{1em}{1}\bibentry{#1}\smallskip\par %{indent}{afterline}
+    \smallskip\par\hangpara{1em}{1}\bibentry{#1}.\smallskip\par %{indent}{afterline}
 }
 % --- sample stuff only -----
 % These format the sample code in this document
@@ -97,7 +97,7 @@
 % ==========   Bibliography
 \nocite{*}   % include everything in the uwthesis.bib file
 % \bibliographystyle{plain}
-\bibliographystyle{plainnat}
+\bibliographystyle{uwthesis}
 \bibliography{uwthesis}
 
 % ==========   Appendices
