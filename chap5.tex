@@ -80,7 +80,7 @@ This method of altering the radiative properties of sea ice allows for fully-cou
     \begin{tabular}{|l|p{4in}|}
     \hline
     \textbf{Dataset} & \textbf{Sea Ice / Ocean Configuration}                                                                                                         \\ \hline
-    $RASM_{CONTROL}$    & Default RASM (see \citet{Hamman_2016b})                                                                                                          \\ \hline
+    $RASM_{CONTROL}$    & Default RASM [see \citet{Hamman_2016b}]                                                                                                          \\ \hline
     $RASM_{RSI}$         & \begin{tabular}[c]{@{}l@{}}Ocean: No changes\\ Sea Ice: Snow albedo -0.5 std. dev. of observed.\end{tabular}                                   \\ \hline
     $RASM_{RSH}$         & \begin{tabular}[c]{@{}p{3.5in}}Ocean: No changes\\ Sea Ice: No sea ice initial condition, reduced snow/ice/pond albedo -2.0 std. dev.
     \end{tabular} \\ \hline
@@ -159,12 +159,9 @@ Figure \ref{fig:sea_ice_box} shows box-and-whisker plots of sea ice extent from 
 Compared to $RASM_{CONTROL}$, $RASM_{RSI}$ and $RASM_{RSH}$ have reductions in minimum annual sea ice extents of 16\% and 49\% respectively.
 In the fall, these simulations include smaller reductions in mean sea ice cover of 3\% and 11\% respectively.
 However, compared to the RASM simulations, the observations of sea ice extent demonstrate significantly more interannual variability.
-Individual months can be clearly seen in \ref{fig:sea_ice_box} with the lowest values in each simulation corresponding to October, the middle values corresponding to November, and the highest values corresponding to December.
+Individual months can be clearly seen in Figure \ref{fig:sea_ice_box} with the lowest values in each simulation corresponding to October, the middle values corresponding to November, and the highest values corresponding to December.
 The RASM simulations have interannual standard deviations for each of these months that are 1.6 to 3.5 times smaller than the observations.
  % BN: Perhaps, but you need to discuss the odd distribution of the RASM simulations. Whereas the observation are somewhat evenly distributed across the full range of extents, the RASM simulations show an odd distribution, which appears tri-modal. They either cluster near the mean/median or near the extremes. This is true for all three simulations, which seems very odd to me. Are you sure nothing went wrong in the processing. I am very suspicious that there is not a single year that falls in large parts of the distribution of extents. As a reviewer this would be a red flag that something is not right. You need to check this figure with Andrew and include a discussion.
-
- % BN: Don't use "assert", because you can assert whatever you want but that does not make it so. In this case, I would argue that there is something fishy and you need to provide some more analysis. We cannot just say this is good enough. Representing a map with the mean sea ice extent in each state (or from a simulation that is close to the center of each cluster) may provide insight into what is going on.
-
  % BN: Discuss the combination of the three datasets under the SOM discussions. It is not immediately clear to me why you can do that (or what you gain by doing so)
 
 \begin{figure}
@@ -208,11 +205,11 @@ The full, trained Kohonen Layer (or Master SOM) is shown in Figure \ref{fig:mast
 The SOM algorithm identified characteristic spatial patterns of evaporation anomalies, with patterns of positive evaporation anomalies toward the top left of Figure \ref{fig:master_som} and patterns of negative evaporation anomalies toward the bottom right.
 Here we focus our analysis on four SOM nodes that exhibit the largest hit rate (number of months in a particular pattern) and evaporation patterns of interest: (0,1), (0,3), (1,0), and (1,2).
 We will show that the first two SOMs represent generally wet patterns (high precipitation) while the second two represent generally dry patterns (low precipitation) by mapping these patterns to their coincident patterns of precipitation.
-In each of these patterns, the combined position, sign, and magnitude of evaporation anomalies in the central Arctic, Kara/Barents sea, and North Atlantic Ocean are characteristically different.
+In each of these patterns, the combined position, sign, and magnitude of evaporation anomalies in the central Arctic, Kara/Barents Seas, and North Atlantic Ocean are characteristically different.
 
 \begin{figure}
   \centering
-  \includegraphics[width=14cm,keepaspectratio]{master_som}
+  \includegraphics[width=16cm,keepaspectratio]{master_som}
   \caption{Master SOM. The hit rate, shown as the percentage of all the months (270) in the training dataset that are part of each pattern, is shown in the top left corner.}
   \label{fig:master_som}
 \end{figure}
@@ -231,7 +228,7 @@ The lack of correspondence between sea ice and evaporation anomalies indicates t
 
 \begin{figure}
   \centering
-  \includegraphics[width=15cm,keepaspectratio]{composite_som}
+  \includegraphics[width=16cm,keepaspectratio]{composite_som}
   \caption{SOM nodes (0,1), (0,3), (1,0), and (1,2) mapped to ocean evaporation, sea level pressure (SLP), sea ice concentration, precipitation over land, and snow water equivalent. Except for sea level pressure, values plotted are the average anomalies across all the members of each node.}
   \label{fig:composite_som}
   % BN: I don't know how to interpret the ET units
@@ -256,7 +253,7 @@ However, the patterns with large shifts in frequency [(0,1) and (1,2)] change in
 
 \begin{figure}
   \centering
-  \includegraphics[width=10cm,keepaspectratio]{som_hit_freq}
+  \includegraphics[width=12cm,keepaspectratio]{som_hit_freq}
   \caption{SOM pattern frequency by month and RASM simulation.}
   \label{fig:som_hit_freq}
 \end{figure}

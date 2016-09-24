@@ -4,11 +4,11 @@
 \section{Introduction}
 In conjunction with the preparation of this dissertation, I have had the opportunity to contribute to a variety of open source software projects.
 In this section, I briefly introduce the main projects that I have contributed to and that have been used in this dissertation.
-Some of these tools were developed specifically for the scientific research included in this chapter (e.g. \textbf{RASM} and \textbf{RVIC}) while others were tools used for processing and analysis of scientific data (e.g. \textbf{xarray}).
-\textbf{VIC} version 5.0.0 was a major development project that took nearly three years to complete.
+Some of these tools were developed specifically for the scientific research included in this chapter (e.g. RASM and RVIC) while others were tools used for processing and analysis of scientific data (e.g. Xarray).
+VIC version 5.0.0 was a major development project that took nearly three years to complete.
 
 Nearly all of the software I have written and used during my time working on this dissertation is publicly available under open-source.
-With the exception of the \textbf{RASM} model source code, the other packages described in this section were developed entirely in the open.
+With the exception of the RASM model source code, the other packages described in this section were developed entirely in the open.
 Transparent scientific software development facilitates reuse and extension and review by the broader scientific community \citep{Ince_2012}.
 
 \section{The Variable Infiltration Capacity Model}
@@ -28,20 +28,20 @@ The image driver is the foundation of the CESM driver; which couples VIC to CESM
 The Python driver provides interactive access to the functions and datatypes of VIC's physical core from a Python interface.
 Finally, VIC 5.0 is distributed with a robust test infrastructure, components of which routinely run during development using the Travis CI continuous integration service.
 
-\textbf{VIC} 5.0 is publicly available in the following source code repository:
+VIC 5.0 is publicly available in the following source code repository:
 
 \hangbibentry{Hamman_2016c}
 
-A manuscript describing the development of \textbf{VIC} 5.0 is to be submitted to \textit{Geophysical Research Letters} as:
+A manuscript describing the development of VIC 5.0 is to be submitted to \textit{Geophysical Research Letters} as:
 
 \hangbibentry{Hamman_2016d}
 
 \section{The Regional Arctic System Model}
 \label{sec:rasm_dev}
 
-\textbf{RASM} has been described in detail in Chapters \ref{chap:rasm}, \ref{chap:land_surface}, and \ref{chap:streamflow}.
-The source code that makes up \textbf{RASM} is scheduled to be released upon publication of Maslowski et al (Manuscript in preparation).
-\textbf{RASM} is built using the core infrastructure from the Community Earth System Model (CESM), which itself is publicly available (http://www.cesm.ucar.edu/models/cesm1.0/).
+RASM has been described in detail in Chapters \ref{chap:rasm}, \ref{chap:land_surface}, and \ref{chap:streamflow}.
+The source code that makes up RASM is scheduled to be released upon publication of Maslowski et al (Manuscript in preparation).
+RASM is built using the core infrastructure from the Community Earth System Model (CESM), which itself is publicly available (http://www.cesm.ucar.edu/models/cesm1.0/).
 Table \ref{table:rasm_versions} summarizes the model versions and locations of the source code for each component model in RASM.
 
 \begin{table}[]
@@ -65,25 +65,25 @@ POP                & \citet{Smith_2010}        & \citet{Roberts_2015a}  & 2     
 \section{The RVIC Streamflow Routing Model}
 \label{sec:rvic_dev}
 
-\textbf{RVIC} is a source-to-sink linear routing model used to route streamflows from runoff produced in macro-scale hydrologic models such as \textbf{VIC}.
-\textbf{RVIC} is written in a combination Python and C and is publicly available in \citet{Hamman_2015}
-\textbf{RVIC's} convolution routine included in \textbf{RASM} has been written in Fortran and will be distributed with the rest of the \textbf{RASM} source code.
+RVIC is a source-to-sink linear routing model used to route streamflows from runoff produced in macro-scale hydrologic models such as VIC.
+RVIC is written in a combination Python and C and is publicly available in \citet{Hamman_2015}
+RVIC's convolution routine included in RASM has been written in Fortran and will be distributed with the rest of the RASM source code.
 
-\textbf{RVIC} 1.1 is publicly available in the following source code repository:
+RVIC 1.1 is publicly available in the following source code repository:
 
 \hangbibentry{Hamman_2015}
 
 \section{xarray}
 \label{sec:xarray_dev}
 
-\textbf{xarray} is a community-built open source project and Python package that provides a toolkit and data structures for N-dimensional labeled arrays \citep{Hoyer_2016}.
-I have been contributing to the \textbf{xarray} project since May 2014 and the package has been a core tool in this dissertation.
-\textbf{xarray} includes an API inspired by pandas \citep{mckinney_2010} and the Common Data Model for self-described scientific data \citep{Rew_1990,Brown_1993}.
-Key features of the \textbf{xarray} package include label-based indexing and arithmetic, interoperability with the core scientific Python packages (e.g., pandas, NumPy \citep{Jones_2001}, Matplotlib \citep{van_der_Walt_2011}), out-of-core computation on datasets that do not fit into memory, a wide range of serialization and input/output options (e.g. netCDF, HDF, GRIB1/2), and advanced multi-dimensional data manipulation tools such as group-by and resampling.
+Xarray is a community-built open source project and Python package that provides a toolkit and data structures for N-dimensional labeled arrays \citep{Hoyer_2016}.
+I have been contributing to the Xarray project since May 2014 and the package has been a core tool in this dissertation.
+Xarray includes an API inspired by pandas \citep{mckinney_2010} and the Common Data Model for self-described scientific data \citep{Rew_1990,Brown_1993}.
+Key features of the Xarray package include label-based indexing and arithmetic, interoperability with the core scientific Python packages (e.g., pandas, NumPy \citep{Jones_2001}, Matplotlib \citep{van_der_Walt_2011}), out-of-core computation on datasets that do not fit into memory, a wide range of serialization and input/output options (e.g. netCDF, HDF, GRIB1/2), and advanced multi-dimensional data manipulation tools such as group-by and resampling.
 It has been widely adopted in the geoscience community \citep[e.g.][]{xgcm,Dawson_2016a,Dawson_2016b}, but has also been used in physics \citep[e.g.][]{pycalphad}, time series analytics \citep{cesium}, and finance.
 On
-\textbf{xarray} is licensed as an open source package using the Apache, v2.0 license.
+Xarray is licensed as an open source package using the Apache, v2.0 license.
 
-A complete description of \textbf{xarray} is available as
+A complete description of Xarray is available as
 
 \hangbibentry{Hoyer_2016}
