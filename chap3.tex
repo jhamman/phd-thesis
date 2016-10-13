@@ -110,7 +110,8 @@ Snow albedo decays as a function of time and season \citep{Andreadis_2009}.
 As an uncoupled hydrologic model, VIC has been applied at global and continental scales \citep{Maurer_2001,Nijssen_1997,Nijssen_2001} including numerous pan-Arctic hydrologic studies \citep{Adam_2007,Slater_2007,Su_2005,Tan_2011}.
 VIC has also been coupled to prognostic atmospheric models, such MM5 \citep{Zhu_2009}, to provide lower boundary conditions over land.
 
-RASM uses a modified implementation of VIC, version 4.0.4 (available at https://github.com/UW-Hydro/VIC/releases/tag/VIC.4.0.4).
+RASM uses a modified implementation of VIC, version 4.0.4 (available at \\
+https://github.com/UW-Hydro/VIC/releases/tag/VIC.4.0.4).
 Extensive structural changes to the VIC source code were required to allow coupling with other RASM component models via the flux coupler, but changes to the physical core of the model were limited.
 The VIC physics used within RASM differs from the standard release version 4.0.4 in the following four major ways:
 
@@ -444,10 +445,10 @@ Averaged over the month of July, RASM and observed Bowen ratios at the BOREAS si
 On annual time scales, surface and subsurface runoff from the land surface can be thought of as the difference between precipitation and evapotranspiration, assuming no change in storage.
 Since we lack the ability to effectively measure evapotranspiration across large areas, in situ observations of streamflow and gridded observations of precipitation enable us to evaluate the overall water balance.
 Figure \ref{fig:streamflow_scatter} shows climatological, basin-averaged precipitation, runoff, and runoff ratios from the A2006 precipitation and R-ArcticNET (Fig. \ref{fig:domain}d) runoff datasets and compares these to the same quantities based on $RASM_{ERA}$, $VIC_{S2006}$, MERRA, and ERA.
-Compared to A2006 precipitation, $RASM_{ERA}$ has the lowest root-mean-square error (RMSE) and bias of all the models, +0.3 and +0.0072 mm day$^{-1}$ respectively.
-$VIC_{S2006}$, which is forced using $S2006$, has a negative bias (-0.34 mm day$^{-1}$) compared to A2006, especially in wetter basins (those with precipitation greater than 1.75 mm day$^{-1}$).
+Compared to A2006 precipitation, $RASM_{ERA}$ has the lowest root-mean-square error (RMSE) and bias of all the models, +0.3 and +0.0072 $mm day^{-1}$ respectively.
+$VIC_{S2006}$, which is forced using $S2006$, has a negative bias (-0.34 $mm day^{-1}$) compared to A2006, especially in wetter basins (those with precipitation greater than 1.75 $mm day^{-1}$).
 All of the datasets are biased low with respect to runoff compared to R-ArcticNET.
-$RASM_{ERA}$ and ERA have the smallest biases, -0.12 and -0.021 mm day$^{-1}$, respectively, while the $VIC_{S2006}$ and MERRA datasets have biases of -0.3 and -0.4 mm day$^{-1}$, respectively.
+$RASM_{ERA}$ and ERA have the smallest biases, -0.12 and -0.021 $mm day^{-1}$, respectively, while the $VIC_{S2006}$ and MERRA datasets have biases of -0.3 and -0.4 $mm day^{-1}$, respectively.
 Although the differences in precipitation between MERRA and A2006 are not large, annual runoff from MERRA is substantially lower than observed at nearly all gauge locations, indicating systemic overestimation of evapotranspiration (and thus the latent heat flux) in MERRA.
 This finding aligns with the results shown in Figs. \ref{fig:snow} and \ref{fig:bowen}, in which MERRA is shown to have larger evapotranspiration and latent heat fluxes and smaller Bowen ratios than RASM or ERA.
 \citet{Shiklomanov_2006} estimated annual runoff measurement errors in the largest six Eurasian rivers between 1.5\% and 3.5\%.
@@ -461,7 +462,7 @@ RASM, ERA, and $VIC_{S2006}$ overpredict low runoff ratios and underpredict high
   \includegraphics[width=16cm,keepaspectratio]{ch3_Fig12}
   \caption{Comparison of observed P from A2006 and Q from R-ArcticNET to $RASM_{ERA}$, $RASM_{CFSR}$, $VIC_{S2006}$, MERRA, and ERA at 379 individual basins.
   The blue line is a locally weighted scatterplot smoothing (LOWESS) best-fit model.
-  The RMSE (mm day$^{-1}$) and bias (mm day$^{-1}$) statistics are shown in the top-left corner of each panel.
+  The RMSE ($mm day^{-1}$) and bias ($mm day^{-1}$) statistics are shown in the top-left corner of each panel.
   Climatological mean of coincident records between September 1980 and August 2014.}
   \label{fig:streamflow_scatter}
 \end{figure}

@@ -41,7 +41,6 @@
 
 \documentclass [11pt, proquest] {uwthesis}[2015/03/03]
 
-% The following line would print the thesis in a postscript font
 \usepackage{natbib}
 \usepackage{bibentry}
 \nobibliography*
@@ -63,23 +62,6 @@
 \newcommand\hangbibentry[1]{%
     \smallskip\par\hangpara{1em}{1}\bibentry{#1}.\smallskip\par %{indent}{afterline}
 }
-% --- sample stuff only -----
-% These format the sample code in this document
-
-\usepackage{alltt}  %
-\newenvironment{demo}
-  {\begin{alltt}\leftskip3em
-     \def\\{\ttfamily\char`\\}%
-     \def\{{\ttfamily\char`\{}%
-     \def\}{\ttfamily\char`\}}}
-  {\end{alltt}}
-
-% metafont font.  If logo not available, use the second form
-%
-% \font\mffont=logosl10 scaled\magstep1
-\let\mffont=\sf
-% --- end-of-sample-stuff ---
-
 
 \begin{document}
 
@@ -106,6 +88,7 @@
 \appendix
 \raggedbottom\sloppy
 \include{chap3_supmat}
+\include{chap5_supmat}
 \include{opensource}
 
 \include{vita}
